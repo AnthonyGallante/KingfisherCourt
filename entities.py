@@ -1,3 +1,5 @@
+from data.school_alt_names import alt_names
+
 import pandas as pd
 from dataclasses import dataclass
 
@@ -26,7 +28,15 @@ class BasketballData():
 
 class PlayerContext:
 
-    def __init__(self, school: str, description_df: BasketballData, performance_df: BasketballData, record: pd.Series):
+    def __init__(self, 
+                 school: str, 
+                 description_df: BasketballData, 
+                 performance_df: BasketballData, 
+                 record: pd.Series,
+                 schedule: pd.DataFrame,
+                 schedule_team: pd.DataFrame,
+                 schedule_opp: pd.DataFrame
+        ):
 
         _df = description_df.df
         _df['Height'] = _df['Height'].map(lambda x: height_to_inches(x))
@@ -35,6 +45,10 @@ class PlayerContext:
         self.description = _df
         self.performance = performance_df.df
         self.record = record
+        self.schedule = schedule
+        self.schedule_team = schedule_team       
+        self.schedule_opp = schedule_opp
+
         self.df = self.description[['#', 'Height', 'Weight']].join(
             self.performance, how='inner')
 
@@ -72,7 +86,7 @@ class Team:
         self.name: str = context.school
         self.df: pd.DataFrame = context.df
         self.players: list[Player] = context.create_players()
-        self.aliases: list[str] = []
+        self.aliases: list[str] = alt_names.get(self.name)
 
         self.games = int(context.record['G'])
         self.wins = int(context.record['W'])
@@ -80,6 +94,10 @@ class Team:
         self.pct = float(context.record['W-L%'])
         self.srs = float(context.record['SRS'])
         self.sos = float(context.record['SOS'])
+
+        self.schedule = context.schedule
+        self.schedule_team = context.schedule_team       
+        self.schedule_opp = context.schedule_opp       
 
     def __repr__(self):
         return f"<Team: {self.name} Record: {self.wins}-{self.losses}>"
