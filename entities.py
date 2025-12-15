@@ -78,6 +78,9 @@ class PlayerContext:
     def create_players(self) -> list[Player]:
         return [self.create_player(p) for p in self.get_players()]
 
+_SHARED = ['Opp_Name', 'Tm', 'Opp_Score']
+_COLS = ['FG', 'FGA', 'FG%', '3P', '3PA', '3P%', '2P', '2PA', '2P%', 'eFG%', 'FT', 'FTA', 'FT%', 'ORB', 'DRB', 'TRB', 'AST', 'STL', 'BLK', 'TOV', 'PF']
+_O_COLS = ['o' + col for col in _COLS]
 
 class Team:
 
@@ -97,7 +100,8 @@ class Team:
 
         self.schedule = context.schedule
         self.schedule_team = context.schedule_team       
-        self.schedule_opp = context.schedule_opp       
+        self.schedule_opp = context.schedule_opp
+        self.causal_df = self.create_causal_df()       
 
     def __repr__(self):
         return f"<Team: {self.name} Record: {self.wins}-{self.losses}>"
@@ -112,6 +116,16 @@ class Team:
 
         else:
             raise TypeError("Alias must be a string")
+        
+
+    def create_causal_df(self):
+        df1 = self.schedule_team[_SHARED + _COLS]
+        df2 = self.schedule_opp[_SHARED + _COLS]
+        rename_map = dict(zip(_COLS, _O_COLS))
+        df2 = df2.rename(columns=rename_map)
+        _df = pd.merge(df1, df2, on=_SHARED, how='inner')
+        _df.insert(loc=0, column='Team', value=self.name)
+        return _df
 
 
 def height_to_inches(height: str) -> int:
