@@ -104,6 +104,7 @@ class Team:
         self.schedule_team = context.schedule_team       
         self.schedule_opp = context.schedule_opp
         self.causal_df = self.create_causal_df()       
+        self.seed = None
 
     def __repr__(self):
         return f"<Team: {self.name} Record: {self.wins}-{self.losses}>"
