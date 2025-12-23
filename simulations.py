@@ -4,6 +4,7 @@ from constants import TEAMS_DATA, STAT_EFFECTS, POSSESSIONS_STD_DEV
 import pickle
 import numpy as np
 import pandas as pd
+from tqdm import tqdm
 
 with open(TEAMS_DATA, 'rb') as f:
     teams = pickle.load(f)
@@ -66,7 +67,8 @@ def simulate_game(team_1: Team, team_2: Team):
             _3p = 3.0 * player_stats['3PA'] * shooting_pct['3P%']
             _pts = float(_2p + _3p)
 
-            event_log['Pts'] = _pts
+            event_log['2P'] = float(_2p / 2.0)
+            event_log['3P'] = float(_3p / 3.0)
             tm_score += _pts
 
             for event in ['BLK', 'STL', 'TOV', 'ORB', 'DRB', 'PF']:
@@ -83,16 +85,16 @@ def simulate_game(team_1: Team, team_2: Team):
     team_2_score = np.sum(t1[:, 1]) + np.sum(t2[:, 0])
     
     if team_1_score > team_2_score:
-        output['Win'] = team_1.name
-        output['Win Score'] = team_1_score
-        output['Lose'] = team_2.name
-        output['Lose Score'] = team_2_score
+        output['Winner'] = team_1.name
+        output['Winner Score'] = team_1_score
+        output['Loser'] = team_2.name
+        output['Loser Score'] = team_2_score
 
     elif team_1_score < team_2_score:
-        output['Win'] = team_2.name
-        output['Win Score'] = team_2_score
-        output['Lose'] = team_1.name
-        output['Lose Score'] = team_1_score
+        output['Winner'] = team_2.name
+        output['Winner Score'] = team_2_score
+        output['Loser'] = team_1.name
+        output['Loser Score'] = team_1_score
 
     elif np.nan in [team_1_score, team_2_score]:
         return simulate_game(team_1, team_2)
