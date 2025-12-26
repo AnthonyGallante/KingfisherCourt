@@ -6,6 +6,7 @@ from constants import TEAMS_DATA
 with open(TEAMS_DATA, 'rb') as f:
     teams = pickle.load(f)
 
+# TODO: UPDATE ALL OF THESE USING THE SPREADSHEET!
 east = {
     1:  "Connecticut",
     2:  "Iowa State",
