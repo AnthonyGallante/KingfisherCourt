@@ -6,6 +6,7 @@ import numpy as np
 import pandas as pd
 from collections import Counter
 from tqdm import tqdm, trange
+from IPython.display import clear_output
 
 with open(TEAMS_DATA, 'rb') as f:
     teams = pickle.load(f)
@@ -132,7 +133,8 @@ def parse_game_log(log):
 
 
 def simulate_n_games(team_1, team_2, n: int, summary=False, viz=False):
-    print(f'Simulating Game: {team_1.name} vs. {team_2.name}')
+    clear_output()
+    tqdm.write(f'Simulating Game: {team_1.name} vs. {team_2.name}')
 
     team_1_win_counter = 0
     team_2_win_counter = 0
@@ -187,7 +189,7 @@ def simulate_n_games(team_1, team_2, n: int, summary=False, viz=False):
     overall_loser = team_1.name if team_1_win_counter < team_2_win_counter else team_2.name
     record = f'{team_1.name}: {team_1_win_counter} - {team_2_win_counter} :{team_2.name}'
 
-    print(f'{team_1.name} vs. {team_2.name} Complete!')
+    tqdm.write(f'{team_1.name} vs. {team_2.name} Complete!')
 
     return {'Winner': overall_winner,
              'Loser': overall_loser, 
