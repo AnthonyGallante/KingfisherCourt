@@ -1,4 +1,5 @@
 from entities import *
+from gpt_analysis import *
 from constants import TEAMS_DATA, STAT_EFFECTS, POSSESSIONS_STD_DEV
 
 import pickle
@@ -189,11 +190,18 @@ def simulate_n_games(team_1, team_2, n: int, summary=False, viz=False):
     overall_loser = team_1.name if team_1_win_counter < team_2_win_counter else team_2.name
     record = f'{team_1.name}: {team_1_win_counter} - {team_2_win_counter} :{team_2.name}'
 
+    tqdm.write('Preparing simulation analysis.')
+
+    prompt = create_prompt(overall_winner, record, df)
+    analysis = GPT_Game_Analysis(prompt)
+
     tqdm.write(f'{team_1.name} vs. {team_2.name} Complete!')
+    tqdm.write(analysis)
 
     return {'Winner': overall_winner,
              'Loser': overall_loser, 
              'Contributions': df, 
              'Scores': game_results, 
-             'Record': record
+             'Record': record,
+             'Analysis': analysis
             }
