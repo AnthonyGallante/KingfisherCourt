@@ -71,7 +71,10 @@ def simulate_game(team_1: Team, team_2: Team):
             _pts = float(_2p + _3p)
 
             event_log['2P'] = float(_2p / 2.0)
+            event_log['2PA'] = float(player_stats['2PA'])
             event_log['3P'] = float(_3p / 3.0)
+            event_log['3PA'] = float(player_stats['3PA'])
+            
             tm_score += _pts
 
             for event in ['BLK', 'STL', 'TOV', 'ORB', 'DRB', 'PF']:
@@ -206,6 +209,8 @@ def simulate_n_games(team_1, team_2, n: int, summary=False, viz=False):
              'Team 2': team_2,
              'Win Count 1': team_1_win_counter,
              'Win Count 2': team_2_win_counter, 
+             'Team 1 Win Pct': round(team_1_win_counter / n, 2),
+             'Team 2 Win Pct': round(team_2_win_counter / n, 2),
              'Record': record,
              'Analysis': analysis
             }
