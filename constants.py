@@ -6,3 +6,17 @@ POSSESSIONS_STD_DEV = 3.22918695871525
 
 GPT_MODEL = "gpt-5-nano-2025-08-07" # GPT 5 Nano
 # GPT_MODEL = "gpt-5.2-2025-12-11"  # GPT 5.2
+
+#-- SPREADSHEET MAP --
+
+SKIP_ROWS = [37, 54, 63, 68, 71]
+ROW_NUMS = [i for i in list(range(5, 73)) if i not in SKIP_ROWS]
+ROWS = {i: str(r) for i, r in enumerate(ROW_NUMS, start=1)}
+
+GAME_COL    = 'E'
+TEAM_1_COL  = 'G'
+TEAM_2_COL  = 'I'
+SCORE_1_COL = 'L'
+SCORE_2_COL = 'N'
+WINNER_COL  = 'O'
+EVAL_COL    = 'Q'
