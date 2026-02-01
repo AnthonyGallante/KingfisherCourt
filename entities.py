@@ -37,7 +37,8 @@ class PlayerContext:
                  schedule: pd.DataFrame,
                  schedule_team: pd.DataFrame,
                  schedule_opp: pd.DataFrame,
-                 pace: float
+                 pace: float,
+                 elo: float
         ):
 
         _df = description_df.df
@@ -51,6 +52,7 @@ class PlayerContext:
         self.schedule_team = schedule_team       
         self.schedule_opp = schedule_opp
         self.pace = pace
+        self.elo = elo
 
         self.df = self.description[['#', 'Height', 'Weight']].join(
             self.performance, how='inner')
@@ -102,6 +104,7 @@ class Team:
         self.srs = float(context.record['SRS'])
         self.sos = float(context.record['SOS'])
         self.pace = context.pace
+        self.elo = context.elo
 
         self.schedule = context.schedule
         self.schedule_team = context.schedule_team       

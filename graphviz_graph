@@ -1,0 +1,47 @@
+
+digraph {
+    // Styling for readability
+    graph [rankdir=LR, splines=curved];
+    node [shape=box, style="filled,rounded", fillcolor="#f0f0f0"];
+
+    Tm;
+    STL -> oTOV;
+    STL -> PF -> oFTA -> oFT -> Opp_Score;
+
+    // Quotes added below for nodes starting with numbers
+    BLK -> o2P;
+    BLK -> o3P;
+    BLK -> oPF;
+
+    TOV -> "3PA" -> "3P" -> Tm;
+    TOV -> "2PA" -> "2P" -> Tm;
+    TOV -> o3PA -> o3P -> Opp_Score;
+    TOV -> o2PA -> o2P -> Opp_Score;
+
+    ORB -> "3PA";
+    ORB -> "2PA";
+
+    DRB -> o2PA;
+    DRB -> o3PA;
+    DRB -> TOV;
+
+    Opp_Score;
+    oSTL -> TOV;
+    oSTL -> oPF -> FTA -> FT -> Tm;
+
+    oBLK -> "2P";
+    oBLK -> "3P";
+    oBLK -> PF;
+
+    oTOV -> "3PA" -> "3P" -> Tm;
+    oTOV -> "2PA" -> "2P" -> Tm;
+    oTOV -> o3PA -> o3P -> Opp_Score;
+    oTOV -> o2PA -> o2P -> Opp_Score;
+
+    oORB -> o3PA;
+    oORB -> o2PA;
+
+    oDRB -> "2PA";
+    oDRB -> "3PA";
+    oDRB -> oTOV;
+}

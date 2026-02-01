@@ -183,38 +183,38 @@
     ]
   }
 
-  // // Author Note
-  // if not anonymous {
-  //   heading(outlined: false, numbering: none, text(normal-size, weight: "bold", [Author Note]))
+  // Author Note
+  if not anonymous {
+    heading(outlined: false, numbering: none, text(normal-size, weight: "bold", [Author Note]))
 
-  //   // ORCID IDs
-  //   for author in authors-parsed.authors {
-  //     set par(spacing: 0.4em)
-  //     if "orcid" in author [
-  //       #author.name #orcid(author.orcid) \
-  //     ]
-  //   }
+    // ORCID IDs
+    for author in authors-parsed.authors {
+      set par(spacing: 0.4em)
+      if "orcid" in author [
+        #author.name #orcid(author.orcid) \
+      ]
+    }
 
-  //   // Disclosures and Acknowledgements
-  //   v(0.5em)
-  //   if disclosure != none [
-  //     #disclosure \
-  //   ] else [
-  //     We have no conflicts of interest to disclose. \
-  //   ]
+    // Disclosures and Acknowledgements
+    v(0.5em)
+    if disclosure != none [
+      #disclosure \
+    ] else [
+      The code for this project is available at the LayupLaboratory repository at the author's personal GitHub page: https://github.com/AnthonyGallante/LayupLaboratory \
+    ]
 
-  //   if funding != none [
-  //     #funding \
-  //   ]
+    if funding != none [
+      #funding \
+    ]
 
-  //   // Contact Information
-  //   [Correspondence concerning this article should be addressed to
-  //     #authors-parsed.corresponding.name, ]
-  //   if "postal" in authors-parsed.corresponding [ #authors-parsed.corresponding.postal, ]
-  //   if (
-  //     "email" in authors-parsed.corresponding
-  //   ) [Email: #link("mailto:" + authors-parsed.corresponding.email, authors-parsed.corresponding.email)]
-  // }
+    // // Contact Information
+    // [Correspondence concerning this article should be addressed to
+    //   #authors-parsed.corresponding.name, ]
+    // if "postal" in authors-parsed.corresponding [ #authors-parsed.corresponding.postal, ]
+    // if (
+    //   "email" in authors-parsed.corresponding
+    // ) [Email: #link("mailto:" + authors-parsed.corresponding.email, authors-parsed.corresponding.email)]
+  }
 
   pagebreak()
 
