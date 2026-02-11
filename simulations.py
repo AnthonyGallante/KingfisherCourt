@@ -103,9 +103,11 @@ def simulate_game(team_1: Team, team_2: Team):
         output['Loser Score'] = team_1_score
 
     elif np.nan in [team_1_score, team_2_score]:
+        # print('NAN FOUND')
         return simulate_game(team_1, team_2)
     
     else:
+        # print('UNCAUGHT ERROR.')
         return simulate_game(team_1, team_2)
 
     output['Game Log'] = game_log
