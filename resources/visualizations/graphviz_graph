@@ -33,10 +33,10 @@ digraph {
     oBLK -> "3P";
     oBLK -> PF;
 
-    oTOV -> "3PA" -> "3P" -> Tm;
-    oTOV -> "2PA" -> "2P" -> Tm;
-    oTOV -> o3PA -> o3P -> Opp_Score;
-    oTOV -> o2PA -> o2P -> Opp_Score;
+    oTOV -> "3PA";
+    oTOV -> "2PA";
+    oTOV -> "o3PA";
+    oTOV -> "o2PA";
 
     oORB -> o3PA;
     oORB -> o2PA;

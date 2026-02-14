@@ -201,6 +201,8 @@
       #disclosure \
     ] else [
       The code for this project is available at the LayupLaboratory repository at the author's personal GitHub page: https://github.com/AnthonyGallante/LayupLaboratory \
+      #linebreak()
+      #text(fill: rgb("#DC143C"))[Modifications to this report in support of Checkpoint B are shown in red.]
     ]
 
     if funding != none [
