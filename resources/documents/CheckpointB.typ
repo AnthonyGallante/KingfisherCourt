@@ -10,8 +10,6 @@
   // Construction of an initial network model 
   // Development of an initial causal forecasting framework 
     This project focuses on using Network Science and Causal Inference concepts included in the MSDS-452-DL curriculum for the purpose of creating a set of diversified, competetive March Madness brackets. The first goal of this effort is creating a model that measures the causal effect of in-game events in terms of their influence on the outcome on the game. Such a model can be used as the basis for Monte Carlo simulation to determine how often one team is likely to defeat another. In recognition that some online competitions allow the user to submit dozens of brackets, the second goal is developing a strategy for building the March Madness bracket itself. 
-    #text(fill: rgb("#DC143C"))[This text is red]. 
-
     ],
   date: "February 15, 2026",
 )
@@ -43,7 +41,7 @@ Uses causal inference frameworks to refute the idea of the "Hot Hand." Does not 
 == SMOGS: Social Network Metrics of Game Success  @Bu2019 and Social Network Analysis of College and Professional Basketball @Xu2018
 
 A network can be formed by modeling the players as nodes and the number of passes between each player as directed, weighted edges. 
-Both Xu et al. and Bu et al. suggest that teams who pass the ball across the entire team have an advantage over teams that do not. The exception is in the Men's National Basketball Association (NBA), which rely on star players to serve as a distribution node, making a majority of the passes. The data sources currently being used (later discussed in @data_sources) do not have data to this resolution, making this resource difficult to use at the current moment. The dataset used by Bu et al. does not appear to available for all NCAA Division Ⅰ basketball teams, as SportsVu optical sensors are not installed in all facilities, despite being standard in theNBA. I am hopeful that passing data is available at the college level.
+Both Xu et al. and Bu et al. suggest that teams who pass the ball across the entire team have an advantage over teams that do not. The exception is in the Men's National Basketball Association (NBA), which rely on star players to serve as a distribution node, making a majority of the passes. The data sources currently being used (later discussed in @data_sources) do not have data to this resolution, making this resource difficult to use at the current moment. The dataset used by Bu et al. does not appear to available for all NCAA Division Ⅰ basketball teams, as SportsVu optical sensors are not installed in all facilities, despite being standard in theNBA. I am hopeful that player-to-player passing data is available at the college level.
 
 = Methods // How did you construct the network model for the selected industry sector or firms? What entities are represented as nodes, and what relationships are represented as links?
 
@@ -51,7 +49,7 @@ This project is divided into two distinct lines of effort: game level prediction
 
 == Game Level Prediction //What are your initial thoughts about the causal model for the second half of the term project? What are the key variables, and what roles do you expect them to play? What modeling methods do you expect to use in the causal forecasting model?
 
-A causal model is used to understand how each event captured in game-level box scores affect scores. @causal_model_dag below shows a preliminary model, which is based on the idea that team possessions lead to scoring opportunities. Here, I model the assumption that increasing events like rebounds and steals leads to more changes in possession. @preliminary_causal_effects shows the preliminary average treatment effect (ATE) for each of the variables shown in the diagram. Many games can be simulated with Monte Carlo methods by randomizing the players participating on each team and the number of possessions that each team gets in each game. 
+A causal model is used to understand how each event captured in game-level box scores affect the final scores of each team. @causal_model_dag below shows a preliminary model, which is based on the idea that team possessions lead to scoring opportunities. Here, I model the assumption that increasing events like rebounds and steals leads to more changes in possession. @preliminary_causal_effects shows the preliminary average treatment effect (ATE) for each of the variables shown in the diagram. Many games can be simulated with Monte Carlo methods by randomizing the players participating on each team and the number of possessions that each team gets in each game. 
 #text(fill: rgb("#DC143C"))[
 Because our simulation is based on possession-level statistics, key variables in our causal model are those that influence team possessions and scoring opportunities. These include rebounds (ORB and DRB), blocks (BLK), steals (STL) and turnovers (TOV). Additionally, because none of these actually contribute directly to a team's score, their effects must be mediated through direct scoring attempts (2PA, 3PA, FTA). The refutation of the DAG below is currently in progress.]
 
@@ -130,6 +128,8 @@ Data from the sources in the table above will be used to populate causal models 
 = Conclusions // Who are the likely users of this research, and what questions should the analysis address for them? 
 
 Preliminary average treatment effects (ATE) from the DAG shown in @causal_model_dag are shown in @preliminary_causal_effects. I hope to collect more data as the season progresses and calculate conditional average treatment effects (CATE) at the team or player level in order to account for differences in team and player behavior. At this point, I have no reason to believe that one team's block should have the same impact as another team's. Switching to a CATE approach will hopefully capture differences in team's offensive and defensive strategies. 
+
+#text(fill: rgb("#DC143C"))[Because CATE is more computationally expensive than ATE, DAG validation will be done using ATE; however, the current structure of this project assumes a single common causal model.] 
 
 #show figure: set block(breakable: true)
 #figure(
