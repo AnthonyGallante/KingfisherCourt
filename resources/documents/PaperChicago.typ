@@ -1,18 +1,31 @@
-#import "./src/apa7ish.typ": *
-// Template Documentation: https://github.com/mrwunderbar666/typst-apa7ish/tree/main
+#set page(paper: "us-letter", margin: (x: 1in, y: 1in))
+#set text(font: "Times New Roman", size: 12pt)
+#set heading(numbering: none)
+#set cite(style: "chicago-author-date")
+#show heading: set align(center)
 
-#show: conf.with(
-  title: "Layup Laboratory",
-  subtitle: "A Causal Inference and Network Science Approach to March Madness",
-  documenttype: "Term Project",
-  authors: ((name: "Anthony Gallante", affiliation: "Northwestern University\nSchool of Professional Studies"),),
-  abstract: [
-  // Construction of an initial network model 
-  // Development of an initial causal forecasting framework 
-    This project focuses on using Network Science and Causal Inference concepts included in the MSDS-452-DL curriculum for the purpose of creating a set of diversified, competetive March Madness brackets. The first goal of this effort is creating a model that measures the causal effect of in-game events in terms of their influence on the outcome on the game. Such a model can be used as the basis for Monte Carlo simulation to determine how often one team is likely to defeat another. In recognition that some online competitions allow the user to submit dozens of brackets, the second goal is developing a strategy for building the March Madness bracket itself. 
-    ],
-  date: "February 15, 2026",
-)
+// Title Page
+#v(2in)
+#align(center)[
+  #text(size: 1.5em)[*Layup Laboratory*] \
+  #text(size: 1em)[A Causal Inference and Network Science Approach to March Madness] \
+  #v(1em)
+  Anthony Gallante \
+  MSDS-452-DL \
+  Graphical, Network, and Causal Models \
+  #datetime.today().display("[Month] [day], [year]")
+]
+
+#linebreak()
+
+#set par(first-line-indent: 0.5in)
+#set par(leading: 2em, spacing: 2em)
+
+= Abstract
+
+This project focuses on using Network Science and Causal Inference concepts included in the MSDS-452-DL curriculum for the purpose of creating a set of diversified, competetive March Madness brackets. The first goal of this effort is creating a model that measures the causal effect of in-game events in terms of their influence on the outcome on the game. Such a model can be used as the basis for Monte Carlo simulation to determine how often one team is likely to defeat another. In recognition that some online competitions allow the user to submit dozens of brackets, the second goal is developing a strategy for building the March Madness bracket itself. 
+
+#pagebreak()
 
 = Introduction
 
@@ -38,16 +51,16 @@ Brill et. al propose an entropy-based strategy when given the opportunity to sub
 
 Uses causal inference frameworks to refute the idea of the "Hot Hand." Does not appear to delve deeply into either causal inference or network science.
 
-== SMOGS: Social Network Metrics of Game Success  @Bu2019 and Social Network Analysis of College and Professional Basketball @Xu2018
+== SMOGS: Social Network Metrics of Game Success @Bu2019 and Social Network Analysis of College and Professional Basketball @Xu2018
 
 A network can be formed by modeling the players as nodes and the number of passes between each player as directed, weighted edges. 
 Both Xu et al. and Bu et al. suggest that teams who pass the ball across the entire team have an advantage over teams that do not. The exception is in the Men's National Basketball Association (NBA), which rely on star players to serve as a distribution node, making a majority of the passes. The data sources currently being used (later discussed in @data_sources) do not have data to this resolution, making this resource difficult to use at the current moment. The dataset used by Bu et al. does not appear to available for all NCAA Division Ⅰ basketball teams, as SportsVu optical sensors are not installed in all facilities, despite being standard in theNBA. I am hopeful that player-to-player passing data is available at the college level.
 
-= Methods // How did you construct the network model for the selected industry sector or firms? What entities are represented as nodes, and what relationships are represented as links?
+= Methods 
 
 This project is divided into two distinct lines of effort: game level prediction with causal inference and bracket optimization with various network science techniques. 
 
-== Game Level Prediction //What are your initial thoughts about the causal model for the second half of the term project? What are the key variables, and what roles do you expect them to play? What modeling methods do you expect to use in the causal forecasting model?
+== Game Level Prediction 
 
 A causal model is used to understand how each event captured in game-level box scores affect the final scores of each team. @causal_model_dag below shows a preliminary model, which is based on the idea that team possessions lead to scoring opportunities. Here, I model the assumption that increasing events like rebounds and steals leads to more changes in possession. @preliminary_causal_effects shows the preliminary average treatment effect (ATE) for each of the variables shown in the diagram. Many games can be simulated with Monte Carlo methods by randomizing the players participating on each team and the number of possessions that each team gets in each game. 
 
@@ -57,7 +70,6 @@ Because our simulation is based on possession-level statistics, key variables in
   image("../visualizations/graphviz_graph.png", width: 60%),
   caption:[A preliminary DAG that can be used to estimate the point value for events that happen during a game of basketball.]
 )<causal_model_dag>
-
 
 Games are built around a randomly generated number of possessions and a weighted sample of players at the start of each match. Each team is given approximately the same number of possessions per game, though it varies according to each team's pace rating. Using per-possession player-level statistics, we estimate the number of events all players on the team are responsible for the decided number of possessions. This simple method will continue to be fine tuned over the course of this project, using past games as validation sets. In the mean time, it at least appears to showcase potential for teams with a considerable amount of data.
 
@@ -84,7 +96,7 @@ The second line of effort in this project is optimizing the bracket performance 
 
 Brill et al. provide a great starting point for this problem, though I am interested in learning about different approaches as well.
 
-= Results // What are your initial observations about the data used to construct the network model? What node and link types are present, and what do key network measurements reveal?
+= Results 
 
 Two graph databases have been created for this project: one to visualize the relationships between players and teams that happened during the basketball season, and one to query pre-calculated simulations for all teams. There are 727 unique teams in the 2026 HoopR dataset, including many schools that, while not division Ⅰ themselves, play division Ⅰ teams during the regular season. 12,476 athletes are included in this dataset. It is worth noting that athletes can transfer schools and play for multiple teams over the course of the season.
 
@@ -121,7 +133,7 @@ See @data_sources for a description of data sources used thus far. This table wi
 
 Data from the sources in the table above will be used to populate causal models and a memgraph database. It may be reasonable to pre-compute a large number of games between all possible combinations of teams and store those in a graph database prior to the bracket generation stage. Computing these outcomes beforehand will allow the bracket-building program to simply query results, rather than performing simulation calculations at runtime. 
 
-= Conclusions // Who are the likely users of this research, and what questions should the analysis address for them? 
+= Conclusions
 
 Preliminary average treatment effects (ATE) from the DAG shown in @causal_model_dag are shown in @preliminary_causal_effects. I hope to collect more data as the season progresses and calculate conditional average treatment effects (CATE) at the team or player level in order to account for differences in team and player behavior. At this point, I have no reason to believe that one team's block should have the same impact as another team's. Switching to a CATE approach will hopefully capture differences in team's offensive and defensive strategies. 
 
@@ -167,13 +179,11 @@ Because CATE is more computationally expensive than ATE, DAG validation will be 
 Results from this project can be visualized in a spreadsheet. I've put together an .xlsx file that can be used to display a bracket from a .csv file, though it is not yet hooked up to the rest of the Python code. See @spreadsheet_visualization for an example output, using randomly selected teams.
 
 #figure(
-  image("../Bracket_example_image.png", width:70%),
+  image("../Bracket_example_image.png", width:110%),
   caption:[An example output visualization spreadsheet.]
 )<spreadsheet_visualization>
 
 I am hopeful that the objectives defined above are attainable with the data available. If time permits, this effort can be validated with data from past tournaments. While I will be entering the brackets created by this project into the official March Madness competition (details yet to be released), my only requirement for success is that this approach is better than random.
 
-
-// Bibliography
 #pagebreak()
-#bibliography("references.bib")
+#bibliography("references.bib", style: "chicago-notes")
