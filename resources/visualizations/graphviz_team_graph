@@ -1,0 +1,31 @@
+
+digraph{
+
+graph [rankdir=LR, splines=curved];
+node [shape=box, style="filled,rounded", fillcolor="#f0f0f0"];
+
+elo_delta;
+elo -> elo_delta;
+opponent_elo -> elo_delta;
+
+elo_delta -> team_turnovers -> team_score;
+elo_delta -> blocks -> team_score;
+elo_delta -> steals -> team_score;
+elo_delta -> offensive_rebounds -> team_score;
+elo_delta -> defensive_rebounds -> team_score;
+elo_delta -> field_goals_attempted -> team_score;
+elo_delta -> three_point_field_goals_attempted -> team_score;
+elo_delta -> fouls -> team_score;
+elo_delta -> free_throws_attempted -> team_score -> score_delta;
+
+team_turnovers -> opponent_team_score;
+blocks -> opponent_team_score;
+steals -> opponent_team_score;
+offensive_rebounds -> opponent_team_score;
+defensive_rebounds -> opponent_team_score;
+field_goals_attempted -> opponent_team_score;
+three_point_field_goals_attempted -> opponent_team_score;
+fouls -> opponent_team_score;
+free_throws_attempted -> opponent_team_score -> score_delta;
+
+}

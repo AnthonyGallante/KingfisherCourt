@@ -50,37 +50,33 @@ This project is divided into two distinct lines of effort: game level prediction
 == Game Level Prediction //What are your initial thoughts about the causal model for the second half of the term project? What are the key variables, and what roles do you expect them to play? What modeling methods do you expect to use in the causal forecasting model?
 
 A causal model is used to understand how each event captured in game-level box scores affect the final scores of each team. @causal_model_dag below shows a preliminary model, which is based on the idea that team possessions lead to scoring opportunities. Here, I model the assumption that increasing events like rebounds and steals leads to more changes in possession. @preliminary_causal_effects shows the preliminary average treatment effect (ATE) for each of the variables shown in the diagram. Many games can be simulated with Monte Carlo methods by randomizing the players participating on each team and the number of possessions that each team gets in each game. 
-#text(fill: rgb("#DC143C"))[
-Because our simulation is based on possession-level statistics, key variables in our causal model are those that influence team possessions and scoring opportunities. These include rebounds (ORB and DRB), blocks (BLK), steals (STL) and turnovers (TOV). Additionally, because none of these actually contribute directly to a team's score, their effects must be mediated through direct scoring attempts (2PA, 3PA, FTA). The refutation of the DAG below is currently in progress.]
+
+Because our simulation is based on possession-level statistics, key variables in our causal model are those that influence team possessions and scoring opportunities. These include rebounds (ORB and DRB), blocks (BLK), steals (STL) and turnovers (TOV). Additionally, because none of these actually contribute directly to a team's score, their effects must be mediated through direct scoring attempts (2PA, 3PA, FTA). The refutation of the DAG below is currently in progress.
 
 #figure(
   image("../visualizations/graphviz_graph.png", width: 60%),
-  caption:[A preliminary DAG that can be used to estimate the point value for events that happen during a game of basketball. #text(fill: rgb("#DC143C"))[A minor adjustment was made, removing duplicate arrows.]]
+  caption:[A preliminary DAG that can be used to estimate the point value for events that happen during a game of basketball.]
 )<causal_model_dag>
 
-#text(fill: rgb("#DC143C"))[
-  Games are built around a randomly generated number of possessions and a weighted sample of players at the start of each match. Each team is given approximately the same number of possessions per game, though it varies according to each team's pace rating. Using per-possession player-level statistics, we estimate the number of events all players on the team are responsible for the decided number of possessions. This simple method will continue to be fine tuned over the course of this project, using past games as validation sets. In the mean time, it at least appears to showcase potential for teams with a considerable amount of data.
-] 
+
+Games are built around a randomly generated number of possessions and a weighted sample of players at the start of each match. Each team is given approximately the same number of possessions per game, though it varies according to each team's pace rating. Using per-possession player-level statistics, we estimate the number of events all players on the team are responsible for the decided number of possessions. This simple method will continue to be fine tuned over the course of this project, using past games as validation sets. In the mean time, it at least appears to showcase potential for teams with a considerable amount of data.
+
 
 #figure(
   image("../visualizations/PreliminarySimulations.png", width:70%),
-  caption:[#text(fill: rgb("#DC143C"))[An overlapping histogram showing preliminary simulation score distributions between the University of Connecticut and the University of Kansas (500 games).]]
+  caption:[An overlapping histogram showing preliminary simulation score distributions between the University of Connecticut and the University of Kansas (500 games).]
 )<uconn_kansas>
 
-#text(fill: rgb("#DC143C"))[
-  A benefit of the causal inference framework used in this project is the ease of explainability for each simulation. For the game above in @uconn_kansas above is the ability to feed the simulated game logs into a large language model and ask for a short analysis. For the 500 simulations above, gpt-5-nano @chatgpt2024 returns the following analysis:
-]
+A benefit of the causal inference framework used in this project is the ease of explainability for each simulation. For the game above in @uconn_kansas above is the ability to feed the simulated game logs into a large language model and ask for a short analysis. For the 500 simulations above, gpt-5-nano @chatgpt2024 returns the following analysis:
 
 #set align(center)
 #linebreak()
-#text(fill: rgb("#DC143C"))[
   _"Connecticut edges Kansas in the simulation, riding superior efficiency, balanced scoring, plus stronger rebounding and turnover discipline; Kansas pushes tempo but falters in efficiency and defensive consistency overall."_
-] 
 #set align(left)
 
 #linebreak()
-#text(fill: rgb("#DC143C"))[While this annotation process has no influence on the outcome of a round of simulations, it at least provides a fun attempt at explaining why one team might have defeated another, which might be useful in upset-situations. While @uconn_kansas shows the outcome of 500 games, fewer simulated games would likely be desired in high-entropy brackets, where chance plays a higher role. Thus, one way to increase the randomness in a bracket is to reduce the number of simulalted games played between each team.
-]
+While this annotation process has no influence on the outcome of a round of simulations, it at least provides a fun attempt at explaining why one team might have defeated another, which might be useful in upset-situations. While @uconn_kansas shows the outcome of 500 games, fewer simulated games would likely be desired in high-entropy brackets, where chance plays a higher role. Thus, one way to increase the randomness in a bracket is to reduce the number of simulalted games played between each team.
+
 
 == Bracket Optimization
 
@@ -90,20 +86,20 @@ Brill et al. provide a great starting point for this problem, though I am intere
 
 = Results // What are your initial observations about the data used to construct the network model? What node and link types are present, and what do key network measurements reveal?
 
-#text(fill: rgb("#DC143C"))[Two graph databases have been created for this project: one to visualize the relationships between players and teams that happened during the basketball season, and one to query pre-calculated simulations for all teams. There are 727 unique teams in the 2026 HoopR dataset, including many schools that, while not division Ⅰ themselves, play division Ⅰ teams during the regular season. 12,476 athletes are included in this dataset. It is worth noting that athletes can transfer schools and play for multiple teams over the course of the season.]
+Two graph databases have been created for this project: one to visualize the relationships between players and teams that happened during the basketball season, and one to query pre-calculated simulations for all teams. There are 727 unique teams in the 2026 HoopR dataset, including many schools that, while not division Ⅰ themselves, play division Ⅰ teams during the regular season. 12,476 athletes are included in this dataset. It is worth noting that athletes can transfer schools and play for multiple teams over the course of the season.
 
-#text(fill: rgb("#DC143C"))[In @memgraph_database below, we visualize each basketball team, the athletes that play on each team, and the outcome of all games played thus far. All edges are directed, and edges between two teams are directed and weighted according to the final difference in score.]
+In @memgraph_database below, we visualize each basketball team, the athletes that play on each team, and the outcome of all games played thus far. All edges are directed, and edges between two teams are directed and weighted according to the final difference in score.
 
 #figure(
   image("../visualizations/memgraph_database_screenshot.png", width:120%),
-  caption:[#text(fill: rgb("#DC143C"))[A sample of the 13,203 nodes and 16,487 relationships formed by teams and players that have participated in the NCAA basketball season.]]
+  caption:[A sample of the 13,203 nodes and 16,487 relationships formed by teams and players that have participated in the NCAA basketball season.]
 )<memgraph_database>
 
-#text(fill: rgb("#DC143C"))[In @precomputed_graph below, we see the results of a simulated round-robin tournament of 64 teams, to be replaced with the actual teams taking place in the NCAA Basketball Tournament once announced. This graph is created in order to drastically reduce the computations needed to produce brackets; all simulations can be performed one time each ahead of time, and only queries of the outcome will need to be performed in any given bracket permutation. While more work needs to be done on the simulations, simulations in their current state seem to favor teams with a higher ELO rating @nolan_2026_elo, which at least indicate forward progress.]
+In @precomputed_graph below, we see the results of a simulated round-robin tournament of 64 teams, to be replaced with the actual teams taking place in the NCAA Basketball Tournament once announced. This graph is created in order to drastically reduce the computations needed to produce brackets; all simulations can be performed one time each ahead of time, and only queries of the outcome will need to be performed in any given bracket permutation. While more work needs to be done on the simulations, simulations in their current state seem to favor teams with a higher ELO rating @nolan_2026_elo, which at least indicate forward progress.
 
 #figure(
   image("../visualizations/precomputed_simulations.png", width:100%),
-  caption:[#text(fill: rgb("#DC143C"))[Simulated round-robin tournament with 64 NCAA basketball teams.]]
+  caption:[Simulated round-robin tournament with 64 NCAA basketball teams.]
 )<precomputed_graph>
 
 == Data Sources
@@ -129,7 +125,7 @@ Data from the sources in the table above will be used to populate causal models 
 
 Preliminary average treatment effects (ATE) from the DAG shown in @causal_model_dag are shown in @preliminary_causal_effects. I hope to collect more data as the season progresses and calculate conditional average treatment effects (CATE) at the team or player level in order to account for differences in team and player behavior. At this point, I have no reason to believe that one team's block should have the same impact as another team's. Switching to a CATE approach will hopefully capture differences in team's offensive and defensive strategies. 
 
-#text(fill: rgb("#DC143C"))[Because CATE is more computationally expensive than ATE, DAG validation will be done using ATE; however, the current structure of this project assumes a single common causal model.] 
+Because CATE is more computationally expensive than ATE, DAG validation will be done using ATE; however, the current structure of this project assumes a single common causal model.
 
 #show figure: set block(breakable: true)
 #figure(
