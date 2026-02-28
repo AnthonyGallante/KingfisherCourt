@@ -1,6 +1,6 @@
 from entities import *
 from gpt_analysis import *
-from constants import TEAMS_DATA, STAT_EFFECTS, POSSESSIONS_STD_DEV
+from constants import *
 
 import pickle
 import numpy as np
@@ -14,6 +14,9 @@ with open(TEAMS_DATA, 'rb') as f:
 
 with open(STAT_EFFECTS, 'rb') as f:
     stats = pickle.load(f)
+
+with open(ELO_STAT_EFFECTS, 'rb') as f:
+    elo_effect = pickle.load(f)
 
 SCALED_STATS = ['2PA', '3PA', 'FTA', 'STL', 'BLK', 'TOV', 'PF', 'ORB', 'DRB']
 UNSCALED_STATS = ['2P%', '3P%', 'FT%']
@@ -78,8 +81,8 @@ def simulate_game(team_1: Team, team_2: Team):
             tm_score += _pts
 
             for event in ['BLK', 'STL', 'TOV', 'ORB', 'DRB', 'PF']:
-                tm_score += player_stats[event] * stats[event]['Tm']
-                opp_score  += player_stats[event] * stats[event]['Opp_Score']
+                tm_score += player_stats[event] * stats[0][event]['Tm']
+                opp_score += player_stats[event] * stats[0][event]['Opp_Score']
                 event_log[event] = float(player_stats[event])
 
             simulated_stats[player] = [float(tm_score), float(opp_score), event_log]
@@ -87,8 +90,14 @@ def simulate_game(team_1: Team, team_2: Team):
 
     t1 = np.array(list(game_log[0].values()))
     t2 = np.array(list(game_log[1].values()))
-    team_1_score = np.sum(t1[:, 0]) + np.sum(t2[:, 1])
-    team_2_score = np.sum(t1[:, 1]) + np.sum(t2[:, 0])
+
+    team1_playing_ELO = np.random.normal(team_1.elo, scale=ELO_STD_DEV)
+    team2_playing_ELO = np.random.normal(team_2.elo, scale=ELO_STD_DEV)
+    elo_delta = team1_playing_ELO - team2_playing_ELO
+    elo_adjustment = elo_delta * elo_effect[0]['team_score']
+    
+    team_1_score = np.sum(t1[:, 0]) + np.sum(t2[:, 1]) + elo_adjustment
+    team_2_score = np.sum(t1[:, 1]) + np.sum(t2[:, 0]) - elo_adjustment
     
     if team_1_score > team_2_score:
         output['Winner'] = team_1.name
