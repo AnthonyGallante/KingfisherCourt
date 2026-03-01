@@ -25,6 +25,12 @@
 
 This project focuses on using Network Science and Causal Inference concepts included in the MSDS-452-DL curriculum for the purpose of creating a set of diversified, competetive March Madness brackets. The first goal of this effort is creating a model that measures the causal effect of in-game events in terms of their influence on the outcome on the game. Such a model can be used as the basis for Monte Carlo simulation to determine how often one team is likely to defeat another. In recognition that some online competitions allow the user to submit dozens of brackets, the second goal is developing a strategy for building the March Madness bracket itself. 
 
+#linebreak()
+
+*Note*: #text(fill: red)[
+  Changes made in support of Checkpoint C are shown in RED.
+]
+
 #pagebreak()
 
 = Introduction
@@ -57,7 +63,6 @@ A network can be formed by modeling the players as nodes and the number of passe
 Both Xu et al. and Bu et al. suggest that teams who pass the ball across the entire team have an advantage over teams that do not. The exception is in the Men's National Basketball Association (NBA), which rely on star players to serve as a distribution node, making a majority of the passes. The data sources currently being used (later discussed in @data_sources) do not have data to this resolution, making this resource difficult to use at the current moment. The dataset used by Bu et al. does not appear to available for all NCAA Division Ⅰ basketball teams, as SportsVu optical sensors are not installed in all facilities, despite being standard in theNBA. I am hopeful that player-to-player passing data is available at the college level.
 
 = Methods 
-// What research methods are you employing, and how are they informed by network science and probabilistic graphical models? What causal forecasting model and software are being used?
 
 This project is divided into two distinct lines of effort: game level prediction with causal inference and bracket optimization with various network science techniques. 
 
@@ -65,14 +70,18 @@ This project is divided into two distinct lines of effort: game level prediction
 
 A causal model is used to understand how each event captured in game-level box scores affect the final scores of each team. @causal_model_dag below shows a preliminary model, which is based on the idea that team possessions lead to scoring opportunities. Here, I model the assumption that increasing events like rebounds and steals leads to more changes in possession. @preliminary_causal_effects shows the preliminary average treatment effect (ATE) for each of the variables shown in the diagram. Many games can be simulated with Monte Carlo methods by randomizing the players participating on each team and the number of possessions that each team gets in each game. 
 
-Because our simulation is based on possession-level statistics, key variables in our causal model are those that influence team possessions and scoring opportunities. These include rebounds (ORB and DRB), blocks (BLK), steals (STL) and turnovers (TOV). Additionally, because none of these actually contribute directly to a team's score, their effects must be mediated through direct scoring attempts (2PA, 3PA, FTA). The refutation of the DAG below is currently in progress.
+Because our simulation is based on possession-level statistics, key variables in our causal model are those that influence team possessions and scoring opportunities. These include rebounds (ORB and DRB), blocks (BLK), steals (STL) and turnovers (TOV). Additionally, because none of these actually contribute directly to a team's score, their effects must be mediated through direct scoring attempts (2PA, 3PA, FTA). 
+
+#text(fill: red)[
+Using python's DoWhy library @sharma2020dowhy, we acknowledge the validity of @causal_model_dag due to its resilience to refutation in the standard toolkit. While it is likely that this is not the absolute truth, our DAG is unlikely to contain placebos, additional random common causes between each variable and the respective team's score, and atypical data subsets. This method was also used for the DAG shown in @elo_dag.
+]
 
 #figure(
   image("../visualizations/graphviz_graph.png", width: 60%),
   caption:[A preliminary DAG that can be used to estimate the point value for events that happen during a game of basketball.]
 )<causal_model_dag>
 
-Games are built around a randomly generated number of possessions and a weighted sample of players at the start of each match. Each team is given approximately the same number of possessions per game, though it varies according to each team's pace rating. Using per-possession player-level statistics, we estimate the number of events all players on the team are responsible for the decided number of possessions. This simple method will continue to be fine tuned over the course of this project, using past games as validation sets. In the mean time, it at least appears to showcase potential for teams with a considerable amount of data.
+Games are built around a randomly generated number of possessions and a weighted sample of players at the start of each match. Each team is given approximately the same number of possessions per game, though it varies according to each team's pace rating. Using per-possession player-level statistics, we estimate the number of events all players on the team are responsible for the decided number of possessions. 
 
 #figure(
   image("../visualizations/PreliminarySimulations.png", width:70%),
@@ -90,8 +99,20 @@ A benefit of the causal inference framework used in this project is the ease of 
 While this annotation process has no influence on the outcome of a round of simulations, it at least provides a fun attempt at explaining why one team might have defeated another, which might be useful in upset-situations. While @uconn_kansas shows the outcome of 500 games, fewer simulated games would likely be desired in high-entropy brackets, where chance plays a higher role. Thus, one way to increase the randomness in a bracket is to reduce the number of simulalted games played between each team.
 
 == Strength of Schedule
-// TODO: 
+#text(fill: red)[
+In order to broadly address changes in scoring behavior due to differences in teams' skill levels, we employ a version of the Elo rating system, borrowed from chess @nolan_2026_elo. With just a single rating number in which teams are awarded relatively few points for an easy win and more points awarded for a difficult decisive win, others have seen approximately a 66% success rate in previous March Madness competitions @hanley2024elo. 
 
+The graph below (@elo_dag) shows the causal assumptions made during a game of basketball played with a team of a different skill level. One can measure the changes in game-level statistics as a function of elo differences. In preliminary analysis, we see that teams challenging an opponent with a rating of 100 points higher are slightly more likely to encounter additional turnovers, blocks, steals, etc., resulting in approximately 2.5 points fewer than playing teams of equal rating.
+]
+
+#figure(
+  image("../visualizations/graphviz_team_graph.png", width:80%),
+  caption:[A directed acyclic graph showing the relationship between elo ratings and game outcomes.]
+)<elo_dag>
+
+#text(fill: red)[
+  Even as this project begins to draw to its close, we might recognize that additional causal models can be made to identify how different offensive and defensive variables influence a team's elo rating. A hypothesis can be formed to investigate whether offense-heavy teams perform at a higher level than their elo rating would suggest when playing against defense-poor teams, or vice versa. Offensive and defensive level performance may be latent variables that can be measured through the use of directed acyclic graphs. This data is likely available in the datasets used in this project and are a logical next step for our prediction model.
+]
 
 == Bracket Optimization
 
@@ -99,10 +120,9 @@ The second line of effort in this project is optimizing the bracket performance 
 
 Brill et al. provide a great starting point for this problem, though I am interested in learning about different approaches as well.
 
-= Results 
-// What data are being used for the analysis? What node types and links are relevant at this stage?
+= Results
 
-Two graph databases have been created for this project: one to visualize the relationships between players and teams that happened during the basketball season, and one to query pre-calculated simulations for all teams. There are 727 unique teams in the 2026 HoopR dataset, including many schools that, while not division Ⅰ themselves, play division Ⅰ teams during the regular season. 12,476 athletes are included in this dataset. It is worth noting that athletes can transfer schools and play for multiple teams over the course of the season.
+Two graph databases have been created for this project: one to visualize the relationships between players and teams that happened during the basketball season, and one to query pre-calculated simulations for all teams. There are 727 unique teams in the 2026 HoopR dataset, including many schoolsd that, while not division Ⅰ themselves, play division Ⅰ teams during the regular season. 12,476 athletes are included in this dataset. It is worth noting that athletes can transfer schools and play for multiple teams over the course of the season.
 
 In @memgraph_database below, we visualize each basketball team, the athletes that play on each team, and the outcome of all games played thus far. All edges are directed, and edges between two teams are directed and weighted according to the final difference in score.
 
@@ -139,11 +159,14 @@ See @data_sources for a description of data sources used thus far. This table wi
 Data from the sources in the table above will be used to populate causal models and a memgraph database. It may be reasonable to pre-compute a large number of games between all possible combinations of teams and store those in a graph database prior to the bracket generation stage. Computing these outcomes beforehand will allow the bracket-building program to simply query results, rather than performing simulation calculations at runtime. 
 
 = Conclusions
-// Given these users and questions, what answers can you provide at this stage, and what do the preliminary results suggest? 
 
-Preliminary average treatment effects (ATE) from the DAG shown in @causal_model_dag are shown in @preliminary_causal_effects. I hope to collect more data as the season progresses and calculate conditional average treatment effects (CATE) at the team or player level in order to account for differences in team and player behavior. At this point, I have no reason to believe that one team's block should have the same impact as another team's. Switching to a CATE approach will hopefully capture differences in team's offensive and defensive strategies. 
+== Amendment of objectives
 
-Because CATE is more computationally expensive than ATE, DAG validation will be done using ATE; however, the current structure of this project assumes a single common causal model.
+#text(fill: red)[
+Previous versions of this document included hopeful efforts to maximize bracket strategies. However, given the constraints of the current academic term and the project's extensive scope, the primary focus has been narrowed to the predictive modeling component. In order to preserve the original objectives of this projcet, a bracket-generating spreadsheet can be developed with the currently existing code base (not yet implemented) to allow users to tune brackets based on the pre-calculated round-robin graph database. This way, multiple brackets can be made, and close games (configurable) can be flipped at random. This simple technique will allow users to generate a new random bracket, without the fear of seeing all 16 seeds make it to the Final Four.
+
+This can be done by encoding each bracket a 63 bit binary string and appending it to file. A 63 bit binary string can easily be encoded as an integer on the range of 0 to $2^63 - 1$ for easier readability. By checking if this number already exists, we can ensure that no duplicate brackets are made.
+]
 
 #show figure: set block(breakable: true)
 #figure(
