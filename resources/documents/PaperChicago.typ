@@ -163,9 +163,11 @@ Data from the sources in the table above will be used to populate causal models 
 == Amendment of objectives
 
 #text(fill: red)[
-Previous versions of this document included hopeful efforts to maximize bracket strategies. However, given the constraints of the current academic term and the project's extensive scope, the primary focus has been narrowed to the predictive modeling component. In order to preserve the original objectives of this projcet, a bracket-generating spreadsheet can be developed with the currently existing code base (not yet implemented) to allow users to tune brackets based on the pre-calculated round-robin graph database. This way, multiple brackets can be made, and close games (configurable) can be flipped at random. This simple technique will allow users to generate a new random bracket, without the fear of seeing all 16 seeds make it to the Final Four.
+Previous versions of this document included hopeful efforts to maximize bracket strategies. However, given the constraints of the current academic term and the project's extensive scope, the primary focus has been narrowed to the predictive modeling component. In order to preserve the original objectives of this projcet, a bracket-generating spreadsheet can be developed with the currently existing code base to allow users to tune brackets based on the pre-calculated round-robin graph database. This way, multiple brackets can be made, and close games (configurable) can be flipped at random. This simple technique will allow users to generate a new random bracket, without the fear of seeing all 16 seeds make it to the Final Four.
 
-This can be done by encoding each bracket a 63 bit binary string and appending it to file. A 63 bit binary string can easily be encoded as an integer on the range of 0 to $2^63 - 1$ for easier readability. By checking if this number already exists, we can ensure that no duplicate brackets are made.
+This has been done by encoding each bracket a 63 bit binary string and appending it to file. A 63 bit binary string can easily be encoded as an integer on the range of 0 to $2^63 - 1$ for easier readability. By checking if this number already exists, we can ensure that no duplicate bracket files are made.
+
+Now that a workflow is complete, previous tournament data can be incorperated and used to assess the prediction accuracy. This will be the final effort of the project.
 ]
 
 #show figure: set block(breakable: true)
@@ -213,7 +215,7 @@ See @spreadsheet_visualization for an example output, using randomly selected te
   caption:[An example output visualization spreadsheet.]
 )<spreadsheet_visualization>
 
-I am hopeful that the objectives defined above are attainable with the data available. If time permits, this effort can be validated with data from past tournaments. While I will be entering the brackets created by this project into the official March Madness competition (details yet to be released), my only requirement for success is that this approach is better than random.
+I am hopeful that the objectives defined above are attainable with the data available. While I will be entering the brackets created by this project into the official March Madness competition (details yet to be released), my only requirement for success is that this approach is better than random.
 
 #pagebreak()
 #bibliography("references.bib", style: "chicago-notes")
