@@ -3,7 +3,6 @@ from data.school_alt_names import alt_names
 import pandas as pd
 from dataclasses import dataclass
 
-
 class Player:
 
     def __init__(self, name, number, position,
