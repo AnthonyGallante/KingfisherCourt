@@ -57,6 +57,7 @@ A network can be formed by modeling the players as nodes and the number of passe
 Both Xu et al. and Bu et al. suggest that teams who pass the ball across the entire team have an advantage over teams that do not. The exception is in the Men's National Basketball Association (NBA), which rely on star players to serve as a distribution node, making a majority of the passes. The data sources currently being used (later discussed in @data_sources) do not have data to this resolution, making this resource difficult to use at the current moment. The dataset used by Bu et al. does not appear to available for all NCAA Division Ⅰ basketball teams, as SportsVu optical sensors are not installed in all facilities, despite being standard in theNBA. I am hopeful that player-to-player passing data is available at the college level.
 
 = Methods 
+// What research methods are you employing, and how are they informed by network science and probabilistic graphical models? What causal forecasting model and software are being used?
 
 This project is divided into two distinct lines of effort: game level prediction with causal inference and bracket optimization with various network science techniques. 
 
@@ -73,7 +74,6 @@ Because our simulation is based on possession-level statistics, key variables in
 
 Games are built around a randomly generated number of possessions and a weighted sample of players at the start of each match. Each team is given approximately the same number of possessions per game, though it varies according to each team's pace rating. Using per-possession player-level statistics, we estimate the number of events all players on the team are responsible for the decided number of possessions. This simple method will continue to be fine tuned over the course of this project, using past games as validation sets. In the mean time, it at least appears to showcase potential for teams with a considerable amount of data.
 
-
 #figure(
   image("../visualizations/PreliminarySimulations.png", width:70%),
   caption:[An overlapping histogram showing preliminary simulation score distributions between the University of Connecticut and the University of Kansas (500 games).]
@@ -84,10 +84,13 @@ A benefit of the causal inference framework used in this project is the ease of 
 #set align(center)
 #linebreak()
   _"Connecticut edges Kansas in the simulation, riding superior efficiency, balanced scoring, plus stronger rebounding and turnover discipline; Kansas pushes tempo but falters in efficiency and defensive consistency overall."_
+#linebreak()
 #set align(left)
 
-#linebreak()
 While this annotation process has no influence on the outcome of a round of simulations, it at least provides a fun attempt at explaining why one team might have defeated another, which might be useful in upset-situations. While @uconn_kansas shows the outcome of 500 games, fewer simulated games would likely be desired in high-entropy brackets, where chance plays a higher role. Thus, one way to increase the randomness in a bracket is to reduce the number of simulalted games played between each team.
+
+== Strength of Schedule
+// TODO: 
 
 
 == Bracket Optimization
@@ -97,6 +100,7 @@ The second line of effort in this project is optimizing the bracket performance 
 Brill et al. provide a great starting point for this problem, though I am interested in learning about different approaches as well.
 
 = Results 
+// What data are being used for the analysis? What node types and links are relevant at this stage?
 
 Two graph databases have been created for this project: one to visualize the relationships between players and teams that happened during the basketball season, and one to query pre-calculated simulations for all teams. There are 727 unique teams in the 2026 HoopR dataset, including many schools that, while not division Ⅰ themselves, play division Ⅰ teams during the regular season. 12,476 athletes are included in this dataset. It is worth noting that athletes can transfer schools and play for multiple teams over the course of the season.
 
@@ -115,6 +119,7 @@ In @precomputed_graph below, we see the results of a simulated round-robin tourn
 )<precomputed_graph>
 
 == Data Sources
+// What information sources and datasets have been identified and collected, and what preliminary analyses have been completed?
 See @data_sources for a description of data sources used thus far. This table will be updated as the project progresses.
 
 #show table.cell.where(y: 0): set text(weight: "bold")
@@ -134,6 +139,7 @@ See @data_sources for a description of data sources used thus far. This table wi
 Data from the sources in the table above will be used to populate causal models and a memgraph database. It may be reasonable to pre-compute a large number of games between all possible combinations of teams and store those in a graph database prior to the bracket generation stage. Computing these outcomes beforehand will allow the bracket-building program to simply query results, rather than performing simulation calculations at runtime. 
 
 = Conclusions
+// Given these users and questions, what answers can you provide at this stage, and what do the preliminary results suggest? 
 
 Preliminary average treatment effects (ATE) from the DAG shown in @causal_model_dag are shown in @preliminary_causal_effects. I hope to collect more data as the season progresses and calculate conditional average treatment effects (CATE) at the team or player level in order to account for differences in team and player behavior. At this point, I have no reason to believe that one team's block should have the same impact as another team's. Switching to a CATE approach will hopefully capture differences in team's offensive and defensive strategies. 
 
@@ -176,7 +182,8 @@ Because CATE is more computationally expensive than ATE, DAG validation will be 
   caption: [Preliminary Average Treatment Effects for Player-Level Events],
 ) <preliminary_causal_effects>
 
-Results from this project can be visualized in a spreadsheet. I've put together an .xlsx file that can be used to display a bracket from a .csv file, though it is not yet hooked up to the rest of the Python code. See @spreadsheet_visualization for an example output, using randomly selected teams.
+Results from this project can be visualized in a spreadsheet. 
+See @spreadsheet_visualization for an example output, using randomly selected teams.
 
 #figure(
   image("../Bracket_example_image.png", width:110%),

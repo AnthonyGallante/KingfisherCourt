@@ -69,21 +69,40 @@ def simulate_game(team_1: Team, team_2: Team):
             player_stats = get_player_stats(player, t)[SCALED_STATS] * (possessions[i] / 100)
             shooting_pct = get_player_stats(player, t)[UNSCALED_STATS]
 
-            _2p = 2.0 * player_stats['2PA'] * shooting_pct['2P%']
-            _3p = 3.0 * player_stats['3PA'] * shooting_pct['3P%']
-            _pts = float(_2p + _3p)
+            _2p_luck = np.random.uniform(low=0.8, high=1.2)
+            _3p_luck = np.random.uniform(low=0.8, high=1.2)
+            _ft_luck = np.random.uniform(low=0.8, high=1.2)
+
+            # If player has never recorded an event, let's give them a league average performance
+            fga = player_stats['2PA'] if player_stats['2PA'] > 0 else np.random.poisson(POISSON_2PA)
+            fgpct = shooting_pct['2P%'] if shooting_pct['2P%'] > 0 else np.random.normal(AVG_2P_PCT, scale=0.1)
+
+            tpa = player_stats['3PA'] if player_stats['3PA'] > 0 else np.random.poisson(POISSON_3PA)
+            tppct = shooting_pct['3P%'] if shooting_pct['3P%'] > 0 else np.random.normal(AVG_3P_PCT, scale=0.1)
+
+            fta = player_stats['FTA'] if player_stats['FTA'] > 0 else np.random.poisson(POISSON_FTA)
+            ftpct = shooting_pct['FT%'] if shooting_pct['FT%'] > 0 else np.random.normal(AVG_FT_PCT, scale=0.1)
+
+            _2p = 2.0 * fga * fgpct * _2p_luck
+            _3p = 3.0 * tpa * tppct * _3p_luck
+            _ft = 1.0 * fta * ftpct * _ft_luck
+            _pts = float(_2p + _3p + _ft)
 
             event_log['2P'] = float(_2p / 2.0)
-            event_log['2PA'] = float(player_stats['2PA'])
+            event_log['2PA'] = float(fga)
             event_log['3P'] = float(_3p / 3.0)
-            event_log['3PA'] = float(player_stats['3PA'])
+            event_log['3PA'] = float(tpa)
             
             tm_score += _pts
 
-            for event in ['BLK', 'STL', 'TOV', 'ORB', 'DRB', 'PF']:
-                tm_score += player_stats[event] * stats[0][event]['Tm']
-                opp_score += player_stats[event] * stats[0][event]['Opp_Score']
-                event_log[event] = float(player_stats[event])
+            for event in ['BLK', 'STL', 'TOV', 'ORB', 'DRB', 'PF']:         
+                # If player has never recorded an event, let's give them a league average performance
+                num_event = player_stats[event] if player_stats[event] > 0 else np.random.poisson(AVERAGES[event])
+                
+                tm_score += num_event * stats[0][event]['Tm']
+                opp_score += num_event * stats[0][event]['Opp_Score']
+
+                event_log[event] = float(num_event)
 
             simulated_stats[player] = [float(tm_score), float(opp_score), event_log]
         game_log.append(simulated_stats)
