@@ -1,366 +1,366 @@
 ,Team,Record,ELO,Rank,ELO Delta,School
-0,Michigan,27-2,1860.88,1,,Michigan
-1,Duke,26-2,1835.87,2,,Duke
-2,Arizona,26-2,1822.77,3,,Arizona
-3,Connecticut,26-3,1793.64,4,,Connecticut
-4,Florida,22-6,1770.88,5,2.0,Florida
-5,Gonzaga,28-2,1752.0,6,3.0,Gonzaga
-6,Virginia,25-3,1751.13,7,3.0,Virginia
-7,Saint John's,22-6,1735.39,8,-2.0,St. John's (NY)
-8,Michigan State,23-5,1734.49,9,5.0,Michigan State
-9,Kansas,21-7,1733.95,10,5.0,Kansas
-10,Houston,23-5,1731.46,11,-6.0,Houston
-11,Texas Tech,21-7,1728.48,12,1.0,Texas Tech
-12,Iowa State,24-4,1725.91,13,-2.0,Iowa State
-13,Alabama,21-7,1725.35,14,-2.0,Alabama
-14,Purdue,22-6,1724.53,15,-7.0,Purdue
-15,Arkansas,21-7,1693.54,16,2.0,Arkansas
-16,Illinois,22-7,1684.46,17,-1.0,Illinois
-17,Saint Mary's College,25-4,1677.79,18,5.0,Saint Mary's (CA)
-18,Nebraska,24-4,1672.3,19,1.0,Nebraska
-19,North Carolina,22-6,1660.6,20,8.0,North Carolina
-20,Tennessee,20-8,1658.06,21,-4.0,Tennessee
-21,Villanova,22-6,1648.05,22,3.0,Villanova
-22,Miami (OH),26-0,1642.1,23,3.0,Miami (OH)
-23,BYU,20-8,1639.91,24,-5.0,Brigham Young
-24,Vanderbilt,22-6,1639.83,25,5.0,Vanderbilt
-25,UCLA,19-9,1638.5,26,3.0,UCLA
-26,Louisville,20-8,1635.14,27,-6.0,Louisville
-27,Iowa,20-8,1627.12,28,5.0,Iowa
-28,UCF,20-7,1626.88,29,7.0,UCF
-29,Wisconsin,19-9,1618.27,30,-8.0,Wisconsin
-30,Belmont,25-4,1616.45,31,1.0,Belmont
-31,Saint Louis,24-3,1612.37,32,-8.0,Saint Louis
-32,Kentucky,18-10,1610.52,33,2.0,Kentucky
-33,Miami (FL),22-6,1604.33,34,5.0,Miami (FL)
-34,Utah State,22-5,1603.58,35,-8.0,Utah State
-35,North Carolina State,19-9,1600.35,36,-5.0,NC State
-36,Missouri,19-9,1597.44,37,10.0,Missouri
-37,VCU,21-7,1588.08,38,,Virginia Commonwealth
-38,Akron,22-5,1584.98,39,9.0,Akron
-39,Santa Clara,22-7,1581.4,40,-6.0,Santa Clara
-40,San Diego State,18-8,1580.46,41,12.0,San Diego State
-41,TCU,18-10,1577.59,42,7.0,TCU
-42,Texas A&M,19-9,1563.45,43,-3.0,Texas A&M
-43,New Mexico,20-7,1560.51,44,-7.0,New Mexico
-44,UNCW,23-4,1559.85,45,5.0,UNC Wilmington
-45,Dayton,20-9,1557.9,46,17.0,Dayton
-46,Texas,16-11,1556.69,47,-1.0,Texas
-47,Ohio State,17-11,1555.7,48,-7.0,Ohio State
-48,Clemson,20-8,1553.18,49,2.0,Clemson
-49,High Point,24-4,1549.03,50,6.0,High Point
-50,Georgia,19-9,1547.94,51,-6.0,Georgia
-51,California,19-8,1544.82,52,9.0,California
-52,SMU,19-9,1542.64,53,-9.0,Southern Methodist
-53,South Florida,19-8,1541.49,54,3.0,South Florida
-54,Indiana,17-11,1540.05,55,-13.0,Indiana
-55,McNeese,22-5,1537.15,56,3.0,McNeese State
-56,Nevada,19-9,1535.74,57,7.0,Nevada
-57,Cincinnati,15-13,1534.14,58,-4.0,Cincinnati
-58,Liberty,20-5,1534.11,59,-16.0,Liberty
-59,Auburn,15-13,1518.74,60,-8.0,Auburn
-60,Virginia Tech,18-10,1516.86,61,-1.0,Virginia Tech
-61,Boise State,16-10,1515.86,62,4.0,Boise State
-62,Wichita State,18-10,1508.85,63,5.0,Wichita State
-63,Grand Canyon,18-10,1508.68,64,6.0,Grand Canyon
-64,USC,17-10,1507.62,65,-7.0,Southern California
-65,Yale,19-5,1507.05,66,-11.0,Yale
-66,Colorado State,17-10,1493.57,67,5.0,Colorado State
-67,Florida State,14-14,1491.18,68,-6.0,Florida State
-68,Tulsa,21-6,1490.96,69,11.0,Tulsa
-69,Utah Valley,18-7,1479.88,70,7.0,Utah Valley
-70,Colorado,16-12,1479.42,71,13.0,Colorado
-71,Oklahoma State,17-11,1475.13,72,17.0,Oklahoma State
-72,Seton Hall,19-9,1472.91,73,1.0,Seton Hall
-73,UAB,17-10,1471.7,74,2.0,UAB
-74,Sam Houston State,17-8,1470.49,75,10.0,Sam Houston
-75,Saint Joseph's,16-10,1470.43,76,16.0,Saint Joseph's
-76,Oklahoma,14-14,1463.33,77,20.0,Oklahoma
-77,Stanford,17-11,1462.22,78,13.0,Stanford
-78,Stephen F. Austin,23-4,1460.12,79,-14.0,Stephen F. Austin
-79,Kent State,19-8,1459.82,80,-5.0,Kent State
-80,Bradley,18-11,1459.76,81,-12.0,Bradley
-81,West Virginia,16-12,1456.91,82,-11.0,West Virginia
-82,Charleston,19-10,1456.54,83,7.0,College of Charleston
-83,Baylor,13-14,1455.81,84,-2.0,Baylor
-84,Washington,14-14,1453.77,85,11.0,Washington
-85,Syracuse,15-13,1452.81,86,,Syracuse
-86,George Mason,20-7,1449.97,87,-14.0,George Mason
-87,Arizona State,14-14,1449.3,88,-10.0,Arizona State
-88,Robert Morris,18-10,1448.61,89,6.0,Robert Morris
-89,Merrimack,20-10,1446.01,90,-23.0,Merrimack
-90,Mississippi State,13-15,1443.15,91,-3.0,Mississippi State
-91,Oregon,11-17,1440.47,92,24.0,Oregon
-92,Northwestern,12-16,1439.56,93,21.0,Northwestern
-93,Valparaiso,16-13,1439.22,94,7.0,Valparaiso
-94,Creighton,14-15,1436.99,95,-16.0,Creighton
-95,UC Irvine,17-10,1433.39,96,16.0,UC Irvine
-96,UIC,15-13,1432.06,97,18.0,Illinois-Chicago
-97,Navy,22-6,1430.86,98,5.0,Navy
-98,Tulane,16-11,1428.4,99,-12.0,Tulane
-99,North Dakota State,20-7,1427.6,100,-17.0,North Dakota State
-100,Wake Forest,14-14,1426.68,101,-20.0,Wake Forest
-101,California Baptist,20-8,1425.13,102,9.0,California Baptist
-102,Illinois State,18-11,1422.2,103,15.0,Illinois State
-103,UC San Diego,18-9,1421.41,104,3.0,UC San Diego
-104,DePaul,15-13,1419.55,105,19.0,DePaul
-105,Minnesota,13-15,1419.17,106,-2.0,Minnesota
-106,LSU,15-13,1416.6,107,12.0,Louisiana State
-107,Providence,13-15,1415.81,108,15.0,Providence
-108,Murray State,20-10,1414.22,109,-1.0,Murray State
-109,Butler,15-14,1413.01,110,-8.0,Butler
-110,Cal State Northridge,16-11,1412.09,111,-18.0,Cal State Northridge
-111,Maryland,11-17,1410.74,112,-7.0,Maryland
-112,Hawaii,18-7,1410.12,113,9.0,Hawaii
-113,Harvard,15-10,1409.34,114,3.0,Harvard
-114,Western Kentucky,15-11,1408.13,115,5.0,Western Kentucky
-115,UNLV,13-14,1405.22,116,-16.0,Nevada-Las Vegas
-116,Austin Peay,19-7,1394.02,117,-19.0,Austin Peay
-117,Davidson,15-11,1393.66,118,20.0,Davidson
-118,Arkansas State,18-11,1393.23,119,22.0,Arkansas State
-119,East Tennessee State,19-9,1392.45,120,-21.0,East Tennessee State
-120,Winthrop,17-10,1391.88,121,-27.0,Winthrop
-121,Duquesne,14-12,1390.66,122,-16.0,Duquesne
-122,Hofstra,17-10,1390.07,123,-2.0,Hofstra
-123,Troy,18-11,1388.83,124,11.0,Troy
-124,Oregon State,16-14,1388.25,125,8.0,Oregon State
-125,Marquette,10-18,1386.53,126,16.0,Marquette
-126,Northern Iowa,17-12,1385.54,127,-18.0,Northern Iowa
-127,Xavier,13-15,1384.85,128,-18.0,Xavier
-128,Southern Illinois,14-15,1384.84,129,5.0,Southern Illinois
-129,Kennesaw State,14-11,1383.66,130,24.0,Kennesaw State
-130,George Washington,15-13,1380.7,131,-2.0,George Washington
-131,Saint Thomas,19-8,1376.66,132,23.0,St. Thomas
-132,Coastal Carolina,18-12,1373.75,133,30.0,Coastal Carolina
-133,South Alabama,19-10,1372.53,134,-21.0,South Alabama
-134,Texas State,17-12,1371.96,135,17.0,Texas State
-135,Wright State,17-11,1371.63,136,12.0,Wright State
-136,Utah Tech,15-12,1368.95,137,10.0,Utah Tech
-137,Rutgers,11-17,1366.89,138,-13.0,Rutgers
-138,Seattle University,16-12,1364.94,139,6.0,Seattle
-139,Kansas State,11-17,1363.83,140,-13.0,Kansas State
-140,Fordham,13-12,1363.29,141,-2.0,Fordham
-141,James Madison,16-14,1363.14,142,-10.0,James Madison
-142,Memphis,12-16,1361.38,143,-12.0,Memphis
-143,San Francisco,14-15,1361.31,144,-4.0,San Francisco
-144,South Carolina,12-16,1358.18,145,-9.0,South Carolina
-145,Georgetown,13-15,1356.29,146,-18.0,Georgetown
-146,Ole Miss,11-17,1355.82,147,-17.0,Mississippi
-147,Fairfield,18-11,1355.79,148,16.0,Fairfield
-148,North Texas,14-13,1354.05,149,-23.0,North Texas
-149,Samford,15-13,1353.39,150,,Samford
-150,FAU,14-13,1353.25,151,14.0,Florida Atlantic
-151,Central Arkansas,17-11,1351.37,152,24.0,Central Arkansas
-152,Wyoming,14-13,1349.86,153,-16.0,Wyoming
-153,Cornell,11-12,1344.32,154,36.0,Cornell
-154,Tennessee State,17-9,1343.93,155,24.0,Tennessee State
-155,Monmouth,14-14,1343.91,156,22.0,Monmouth
-156,Penn,13-11,1343.24,157,14.0,Pennsylvania
-157,UC Santa Barbara,16-11,1340.83,158,8.0,UC Santa Barbara
-158,Drexel,15-14,1337.98,159,21.0,Drexel
-159,Marshall,18-12,1337.31,160,-17.0,Marshall
-160,Wofford,17-11,1336.44,161,31.0,Wofford
-161,Furman,16-11,1336.25,162,7.0,Furman
-162,Louisiana Tech,13-12,1335.7,163,12.0,Louisiana Tech
-163,Utah,10-18,1335.61,164,-7.0,Utah
-164,Notre Dame,12-16,1334.84,165,-6.0,Notre Dame
-165,Queens,17-12,1334.62,166,8.0,Queens (NC)
-166,Charlotte,14-13,1331.11,167,28.0,Charlotte
-167,Towson,13-14,1328.86,168,16.0,Towson
-168,Pittsburgh,10-18,1328.23,169,-16.0,Pittsburgh
-169,Appalachian State,17-12,1327.65,170,-24.0,Appalachian State
-170,Oakland,15-14,1326.94,171,6.0,Oakland
-171,Marist,17-10,1325.37,172,-2.0,Marist
-172,Rhode Island,15-13,1324.67,173,-29.0,Rhode Island
-173,Saint Bonaventure,14-13,1323.01,174,26.0,St. Bonaventure
-174,Southeast Missouri,15-12,1322.3,175,-26.0,Southeast Missouri State
-175,Siena,19-11,1321.67,176,-25.0,Siena
-176,Vermont,17-11,1320.94,177,12.0,Vermont
-177,Penn State,11-17,1320.91,178,-5.0,Penn State
-178,Cal Poly,11-16,1316.72,179,9.0,Cal Poly
-179,UMBC,17-8,1315.81,180,7.0,Maryland-Baltimore County
-180,Morehead State,16-12,1314.94,181,20.0,Morehead State
-181,Ohio,13-13,1314.59,182,-1.0,Ohio
-182,Northern Colorado,15-11,1310.19,183,-27.0,Northern Colorado
-183,Toledo,13-13,1309.12,184,14.0,Toledo
-184,Portland State,15-9,1307.65,185,-27.0,Portland State
-185,Pacific,15-13,1307.64,186,,Pacific
-186,UC Davis,15-12,1306.75,187,-19.0,UC Davis
-187,Stony Brook,15-12,1306.46,188,-26.0,Stony Brook
-188,Middle Tennessee,11-14,1304.72,189,16.0,Middle Tennessee
-189,Washington State,11-18,1303.7,190,-29.0,Washington State
-190,UTRGV,14-13,1302.85,191,-9.0,Texas-Rio Grande Valley
-191,Bethune-Cookman,15-13,1302.26,192,10.0,Bethune-Cookman
-192,Richmond,14-13,1301.6,193,,Richmond
-193,Cal State Fullerton,13-14,1300.95,194,,Cal State Fullerton
-194,Loyola-Marymount,14-15,1298.31,195,21.0,Loyola-Marymount
-195,Temple,14-13,1297.42,196,-24.0,Temple
-196,Lipscomb,16-12,1295.7,197,-37.0,Lipscomb
-197,Saint Peter's,15-11,1294.44,198,11.0,Saint Peter's
-198,Northern Kentucky,15-12,1294.2,199,11.0,Northern Kentucky
-199,Jacksonville State,11-14,1294.08,200,12.0,Jacksonville State
-200,Long Island,20-10,1293.3,201,5.0,Long Island University
-201,William & Mary,15-11,1292.58,202,5.0,William & Mary
-202,Detroit,12-14,1291.68,203,-18.0,Detroit Mercy
-203,Boston College,10-18,1290.78,204,22.0,Boston College
-204,Southern Miss,14-15,1287.62,205,9.0,Southern Mississippi
-205,Georgia Tech,11-17,1285.54,206,-2.0,Georgia Tech
-206,Quinnipiac,17-12,1285.07,207,-40.0,Quinnipiac
-207,Eastern Washington,11-17,1283.11,208,19.0,Eastern Washington
-208,Mercer,15-12,1279.25,209,-26.0,Mercer
-209,Green Bay,14-14,1278.43,210,-2.0,Green Bay
-210,Purdue Fort Wayne,13-14,1277.54,211,-15.0,Purdue Fort Wayne
-211,New Orleans,14-15,1276.83,212,22.0,New Orleans
-212,Radford,13-14,1271.02,213,11.0,Radford
-213,Mount Saint Mary's,13-16,1270.19,214,-23.0,Mount St. Mary's
-214,Iona,17-13,1269.34,215,7.0,Iona
-215,Youngstown State,12-15,1263.35,216,-19.0,Youngstown State
-216,Campbell,11-16,1262.85,217,-14.0,Campbell
-217,Tennessee-Martin,18-9,1262.1,218,14.0,Tennessee-Martin
-218,UNC Asheville,11-15,1261.89,219,6.0,UNC Asheville
-219,Omaha,11-15,1260.62,220,-21.0,Omaha
-220,Montana State,13-13,1258.91,221,25.0,Montana State
-221,Fresno State,11-16,1255.71,222,-4.0,Fresno State
-222,New Mexico State,10-14,1255.57,223,-10.0,New Mexico State
-223,Drake,10-18,1255.32,224,-9.0,Drake
-224,Western Carolina,11-15,1254.57,225,25.0,Western Carolina
-225,UNCG,11-17,1253.91,226,18.0,UNC Greensboro
-226,Central Connecticut,15-11,1249.12,227,15.0,Central Connecticut State
-227,Howard,14-10,1248.39,228,,Howard
-228,Columbia,14-10,1248.09,229,19.0,Columbia
-229,East Carolina,9-18,1247.61,230,9.0,East Carolina
-230,SIUE,15-12,1243.54,231,2.0,SIU Edwardsville
-231,North Dakota,13-15,1243.36,232,-1.0,North Dakota
-232,Montana,12-13,1241.81,233,12.0,Montana
-233,UTA,13-13,1241.2,234,-11.0,UT Arlington
-234,Bowling Green,13-13,1239.49,235,-24.0,Bowling Green State
-235,Buffalo,14-12,1238.15,236,-6.0,Buffalo
-236,Texas A&M-Corpus Christi,11-14,1236.0,237,15.0,Texas A&M-Corpus Christi
-237,Weber State,13-14,1234.86,238,-2.0,Weber State
-238,FIU,10-15,1234.6,239,-10.0,Florida International
-239,Georgia Southern,14-15,1232.76,240,15.0,Georgia Southern
-240,UMass,14-14,1231.68,241,-24.0,Massachusetts
-241,Colgate,15-13,1227.89,242,-23.0,Colgate
-242,FGCU,12-16,1221.53,243,-23.0,Florida Gulf Coast
-243,Denver,12-16,1220.54,244,-23.0,Denver
-244,Idaho,13-13,1217.29,245,19.0,Idaho
-245,Rice,9-17,1217.22,246,3.0,Rice
-246,Dartmouth,9-14,1216.76,247,-12.0,Dartmouth
-247,Milwaukee,11-19,1215.13,248,24.0,Milwaukee
-248,Sacred Heart,12-18,1214.46,249,25.0,Sacred Heart
-249,South Dakota State,11-16,1213.81,250,8.0,South Dakota State
-250,Abilene Christian,10-15,1212.59,251,-8.0,Abilene Christian
-251,Elon,12-15,1212.14,252,-12.0,Elon
-252,UTEP,7-18,1211.82,253,-15.0,UTEP
-253,La Salle,7-20,1210.85,254,-7.0,La Salle
-254,Norfolk State,10-14,1210.16,255,-2.0,Norfolk State
-255,Old Dominion,10-20,1209.88,256,5.0,Old Dominion
-256,Chattanooga,9-18,1209.39,257,-20.0,Chattanooga
-257,Lehigh,12-16,1208.35,258,18.0,Lehigh
-258,Portland,10-18,1207.7,259,-5.0,Portland
-259,San Jose State,7-20,1202.9,260,8.0,San Jose State
-260,American,14-14,1202.23,261,-20.0,American
-261,South Dakota,12-15,1200.58,262,22.0,South Dakota
-262,NJIT,14-14,1200.18,263,,NJIT
-263,Tarleton State,10-15,1198.75,264,-7.0,Tarleton State
-264,Hampton,10-17,1198.62,265,-9.0,Hampton
-265,Alabama A&M,13-12,1198.01,266,,Alabama A&M
-266,Louisiana,10-21,1194.7,267,-16.0,Louisiana
-267,Loyola-Chicago,6-22,1193.5,268,-1.0,Loyola (IL)
-268,Boston University,13-16,1192.06,269,11.0,Boston University
-269,Nicholls,11-17,1188.06,270,16.0,Nicholls State
-270,Delaware,9-18,1183.35,271,-11.0,Delaware
-271,Longwood,12-15,1182.33,272,-1.0,Longwood
-272,Missouri State,10-15,1181.84,273,-8.0,Missouri State
-273,Brown,7-16,1177.59,274,-12.0,Brown
-274,Southern,10-15,1174.55,275,-16.0,Southern
-275,Texas Southern,9-16,1171.65,276,14.0,Texas Southern
-276,Princeton,7-19,1170.93,277,-4.0,Princeton
-277,North Carolina A&T,9-16,1170.11,278,3.0,North Carolina A&T
-278,Presbyterian College,11-16,1168.6,279,3.0,Presbyterian
-279,San Diego,9-19,1165.09,280,-2.0,San Diego
-280,Indiana State,8-20,1164.63,281,-2.0,Indiana State
-281,Cleveland State,7-20,1164.41,282,-12.0,Cleveland State
-282,UMass-Lowell,10-16,1164.38,283,-8.0,Massachusetts-Lowell
-283,Northwestern State,8-19,1163.28,284,9.0,Northwestern State
-284,Eastern Kentucky,9-19,1162.27,285,-8.0,Eastern Kentucky
-285,Morgan State,9-14,1158.62,286,10.0,Morgan State
-286,Florida A&M,10-15,1157.47,287,15.0,Florida A&M
-287,Western Michigan,9-18,1157.22,288,17.0,Western Michigan
-288,Lindenwood,13-14,1153.66,289,-20.0,Lindenwood
-289,Manhattan,11-18,1149.9,290,-7.0,Manhattan
-290,Le Moyne,14-15,1147.21,291,13.0,Le Moyne
-291,Tennessee Tech,10-17,1144.91,292,-7.0,Tennessee Tech
-292,Charleston Southern,11-16,1144.8,293,22.0,Charleston Southern
-293,Central Michigan,7-19,1139.34,294,-3.0,Central Michigan
-294,Arkansas-Pine Bluff,10-16,1137.28,295,2.0,Arkansas-Pine Bluff
-295,Pepperdine,6-22,1134.25,296,-4.0,Pepperdine
-296,Idaho State,9-17,1133.67,297,1.0,Idaho State
-297,UC Riverside,7-21,1127.74,298,-3.0,UC Riverside
-298,Eastern Michigan,9-19,1127.47,299,1.0,Eastern Michigan
-299,Georgia State,8-21,1127.18,300,-13.0,Georgia State
-300,Jackson State,9-19,1126.8,301,-13.0,Jackson State
-301,Lamar,10-17,1126.67,302,-13.0,Lamar
-302,West Georgia,11-16,1126.47,303,24.0,West Georgia
-303,Evansville,4-23,1124.77,304,-3.0,Evansville
-304,Ball State,7-19,1124.31,305,20.0,Ball State
-305,Houston Christian,9-18,1123.22,306,10.0,Houston Christian
-306,Mercyhurst,12-16,1122.14,307,-13.0,Mercyhurst
-307,North Alabama,7-19,1120.71,308,13.0,North Alabama
-308,Southern Utah,6-19,1119.41,309,-1.0,Southern Utah
-309,Jacksonville,9-19,1119.19,310,10.0,Jacksonville
-310,Wagner,9-16,1114.24,311,12.0,Wagner
-311,Lafayette,9-20,1113.01,312,21.0,Lafayette
-312,Little Rock,9-19,1110.62,313,-7.0,Little Rock
-313,Maine,7-21,1110.0,314,15.0,Maine
-314,Eastern Illinois,9-18,1106.16,315,19.0,Eastern Illinois
-315,South Carolina Upstate,9-18,1105.07,316,-9.0,South Carolina Upstate
-316,Northern Illinois,7-18,1104.2,317,-8.0,Northern Illinois
-317,Bellarmine,9-18,1103.89,318,-19.0,Bellarmine
-318,Loyola-Maryland,9-19,1097.16,319,-6.0,Loyola (MD)
-319,Alabama State,8-19,1094.71,320,-2.0,Alabama State
-320,Alcorn State,7-20,1091.34,321,-10.0,Alcorn State
-321,Northern Arizona,7-19,1090.74,322,-10.0,Northern Arizona
-322,Albany,7-19,1087.74,323,-13.0,Albany (NY)
-323,Northeastern,6-21,1081.82,324,-5.0,Northeastern
-324,Incarnate Word,8-18,1081.6,325,-11.0,Incarnate Word
-325,Long Beach State,6-21,1075.68,326,,Long Beach State
-326,Prairie View A&M,8-17,1074.32,327,19.0,Prairie View
-327,Bucknell,9-21,1073.86,328,17.0,Bucknell
-328,Canisius,9-20,1073.14,329,21.0,Canisius
-329,East Texas A&M,9-19,1072.87,330,-13.0,East Texas A&M
-330,North Carolina Central,6-16,1070.54,331,5.0,North Carolina Central
-331,Grambling State,10-16,1070.22,332,5.0,Grambling
-332,Southeastern Louisiana,7-21,1068.66,333,-5.0,Southeastern Louisiana
-333,Stonehill,9-19,1067.7,334,10.0,Stonehill
-334,New Haven,10-17,1065.44,335,-32.0,New Haven
-335,UTSA,3-23,1064.88,336,-5.0,UTSA
-336,Stetson,8-20,1064.7,337,-15.0,Stetson
-337,Niagara,7-21,1060.5,338,13.0,Niagara
-338,Army,9-19,1060.22,339,-15.0,Army
-339,South Carolina State,5-20,1059.94,340,-10.0,South Carolina State
-340,Cal State Bakersfield,6-21,1058.15,341,-2.0,Cal State Bakersfield
-341,Sacramento State,6-19,1057.22,342,-7.0,Sacramento State
-342,Coppin State,6-21,1056.38,343,-2.0,Coppin State
-343,Fairleigh Dickinson,8-19,1056.17,344,-12.0,FDU
-344,The Citadel,6-21,1056.08,345,-7.0,The Citadel
-345,Bryant,6-20,1052.15,346,-6.0,Bryant
-346,North Florida,5-23,1051.91,347,7.0,North Florida
-347,Oral Roberts,5-22,1049.03,348,7.0,Oral Roberts
-348,Chicago State,6-23,1037.66,349,-7.0,Chicago State
-349,Holy Cross,8-20,1030.9,350,-7.0,Holy Cross
-350,IU Indianapolis,5-23,1028.83,351,-4.0,IU Indianapolis
-351,Rider,3-24,1022.22,352,-4.0,Rider
-352,Southern Indiana,5-22,1003.69,353,,Southern Indiana
-353,Air Force,3-25,1001.92,354,-2.0,Air Force
-354,New Hampshire,6-19,1000.64,355,-6.0,New Hampshire
-355,Maryland Eastern Shore,6-20,979.09,356,,Maryland Eastern Shore
-356,Binghamton,4-23,976.53,357,4.0,Binghamton
-357,Saint Francis (PA),5-23,975.65,358,-1.0,Saint Francis (PA)
-358,VMI,3-24,953.98,359,-1.0,VMI
-359,Delaware State,3-19,946.37,360,-1.0,Delaware State
-360,Gardner-Webb,1-26,938.46,361,-1.0,Gardner-Webb
-361,ULM,2-27,926.73,362,,Louisiana-Monroe
-362,UMKC,1-25,912.0,363,,Kansas City
-363,Western Illinois,2-25,902.71,364,,Western Illinois
-364,Mississippi Valley State,1-27,856.39,365,,Mississippi Valley State
+0,Duke,28-2,1862.6,1,1.0,Duke
+1,Michigan,27-2,1860.88,2,-1.0,Michigan
+2,Arizona,28-2,1856.93,3,,Arizona
+3,Connecticut,27-3,1800.46,4,,Connecticut
+4,Florida,23-6,1790.4,5,,Florida
+5,Saint John's,23-6,1754.24,6,,St. John's (NY)
+6,Texas Tech,22-7,1753.3,7,,Texas Tech
+7,Michigan State,24-5,1746.8,8,,Michigan State
+8,Alabama,22-7,1745.57,9,,Alabama
+9,Houston,24-5,1740.96,10,,Houston
+10,Virginia,25-4,1732.11,11,,Virginia
+11,Gonzaga,28-3,1721.74,12,,Gonzaga
+12,Kansas,21-8,1715.2,13,,Kansas
+13,Saint Mary's College,26-4,1708.05,14,,Saint Mary's (CA)
+14,Purdue,22-7,1688.26,15,1.0,Purdue
+15,Nebraska,25-4,1686.26,16,1.0,Nebraska
+16,Iowa State,24-6,1685.68,17,-2.0,Iowa State
+17,Illinois,22-7,1684.46,18,,Illinois
+18,North Carolina,23-6,1675.81,19,,North Carolina
+19,Arkansas,21-8,1674.02,20,,Arkansas
+20,Miami (OH),26-0,1642.1,21,,Miami (OH)
+21,Tennessee,20-9,1637.84,22,,Tennessee
+22,Kentucky,19-10,1637.63,23,,Kentucky
+23,Wisconsin,20-9,1632.24,24,,Wisconsin
+24,Villanova,22-7,1629.21,25,,Villanova
+25,Saint Louis,25-3,1623.28,26,,Saint Louis
+26,Utah State,23-5,1621.92,27,,Utah State
+27,Vanderbilt,22-7,1612.73,28,,Vanderbilt
+28,Missouri,20-9,1612.01,29,,Missouri
+29,Miami (FL),23-6,1611.4,30,,Miami (FL)
+30,Louisville,20-9,1604.35,31,,Louisville
+31,BYU,20-9,1602.84,32,,Brigham Young
+32,UCLA,19-10,1599.53,33,,UCLA
+33,VCU,22-7,1598.84,34,,Virginia Commonwealth
+34,Santa Clara,23-7,1593.77,35,,Santa Clara
+35,Ohio State,18-11,1591.97,36,,Ohio State
+36,UCF,20-8,1590.47,37,,UCF
+37,TCU,19-10,1588.9,38,,TCU
+38,New Mexico,21-7,1586.95,39,,New Mexico
+39,Akron,22-5,1584.98,40,,Akron
+40,Iowa,20-9,1584.44,41,,Iowa
+41,Clemson,21-8,1583.97,42,,Clemson
+42,Texas,17-11,1582.18,43,,Texas
+43,Belmont,25-5,1578.77,44,,Belmont
+44,Georgia,20-9,1560.5,45,,Georgia
+45,South Florida,20-8,1558.63,46,1.0,South Florida
+46,Dayton,20-9,1557.9,47,1.0,Dayton
+47,Cincinnati,16-13,1554.93,48,1.0,Cincinnati
+48,San Diego State,18-9,1554.02,49,1.0,San Diego State
+49,McNeese,24-5,1552.43,50,2.0,McNeese State
+50,North Carolina State,19-11,1551.55,51,-5.0,NC State
+51,High Point,24-4,1549.03,52,-1.0,High Point
+52,Liberty,21-5,1544.14,53,,Liberty
+53,Texas A&M,19-10,1537.96,54,,Texas A&M
+54,Indiana,17-12,1527.74,55,,Indiana
+55,UNCW,23-5,1527.63,56,,UNC Wilmington
+56,Boise State,17-10,1524.99,57,,Boise State
+57,Yale,20-5,1516.24,58,,Yale
+58,Wichita State,19-10,1512.45,59,,Wichita State
+59,SMU,19-10,1511.96,60,,Southern Methodist
+60,California,19-9,1505.98,61,,California
+61,Florida State,15-14,1502.9,62,,Florida State
+62,Nevada,19-10,1501.77,63,,Nevada
+63,Virginia Tech,18-11,1501.65,64,,Virginia Tech
+64,Colorado State,18-10,1501.47,65,,Colorado State
+65,West Virginia,17-12,1493.98,66,,West Virginia
+66,USC,17-11,1493.66,67,,Southern California
+67,Stanford,18-11,1492.91,68,,Stanford
+68,Baylor,14-14,1492.21,69,,Baylor
+69,Tulsa,21-6,1490.96,70,,Tulsa
+70,Grand Canyon,18-11,1490.34,71,,Grand Canyon
+71,Charleston,20-10,1488.76,72,,College of Charleston
+72,Utah Valley,19-7,1488.72,73,,Utah Valley
+73,Saint Joseph's,17-10,1485.52,74,,Saint Joseph's
+74,Oklahoma,15-14,1484.99,75,,Oklahoma
+75,Auburn,15-14,1482.8,76,,Auburn
+76,Bradley,19-11,1481.5,77,,Bradley
+77,Sam Houston State,18-8,1478.47,78,,Sam Houston
+78,Stephen F. Austin,25-4,1472.1,79,1.0,Stephen F. Austin
+79,Colorado,16-13,1469.93,80,-1.0,Colorado
+80,Arizona State,15-14,1466.4,81,,Arizona State
+81,George Mason,21-7,1466.22,82,,George Mason
+82,Seton Hall,19-10,1466.09,83,,Seton Hall
+83,Northwestern,13-16,1464.62,84,,Northwestern
+84,Illinois State,19-11,1459.88,85,,Illinois State
+85,Kent State,19-8,1459.82,86,,Kent State
+86,Minnesota,14-15,1458.14,87,,Minnesota
+87,Robert Morris,19-10,1456.76,88,,Robert Morris
+88,Oklahoma State,17-12,1454.34,89,,Oklahoma State
+89,Wake Forest,15-14,1453.56,90,,Wake Forest
+90,UC Irvine,18-10,1451.89,91,,UC Irvine
+91,Merrimack,21-10,1450.92,92,,Merrimack
+92,Navy,23-6,1442.71,93,,Navy
+93,Providence,14-15,1442.33,94,,Providence
+94,DePaul,16-13,1442.19,95,,DePaul
+95,North Dakota State,21-7,1440.46,96,,North Dakota State
+96,Washington,14-15,1439.79,97,,Washington
+97,UNLV,14-14,1439.19,98,,Nevada-Las Vegas
+98,UC San Diego,19-9,1439.1,99,,UC San Diego
+99,UAB,17-11,1438.55,100,,UAB
+100,California Baptist,21-8,1435.81,101,,California Baptist
+101,Mississippi State,13-16,1428.58,102,,Mississippi State
+102,Hawaii,19-7,1427.51,103,,Hawaii
+103,Syracuse,15-14,1425.94,104,,Syracuse
+104,Western Kentucky,16-11,1420.34,105,,Western Kentucky
+105,Oregon,11-18,1415.4,106,,Oregon
+106,Butler,15-14,1413.01,107,,Butler
+107,Tulane,16-12,1411.26,108,,Tulane
+108,Creighton,14-16,1410.47,109,,Creighton
+109,Hofstra,18-10,1409.17,110,,Hofstra
+110,Xavier,14-15,1407.8,111,,Xavier
+111,Davidson,16-11,1406.6,112,,Davidson
+112,Winthrop,18-10,1402.71,113,,Winthrop
+113,Northern Iowa,18-12,1401.58,114,,Northern Iowa
+114,Valparaiso,16-14,1396.25,115,,Valparaiso
+115,Southern Illinois,15-15,1395.98,116,,Southern Illinois
+116,Kennesaw State,15-11,1395.66,117,,Kennesaw State
+117,Rutgers,12-17,1395.03,118,,Rutgers
+118,LSU,15-14,1394.94,119,,Louisiana State
+119,Saint Thomas,20-8,1393.61,120,,St. Thomas
+120,Arkansas State,18-11,1393.23,121,,Arkansas State
+121,Murray State,20-11,1392.48,122,,Murray State
+122,Ole Miss,12-17,1391.75,123,,Mississippi
+123,Wright State,18-11,1391.15,124,,Wright State
+124,UIC,15-14,1390.89,125,,Illinois-Chicago
+125,Troy,18-11,1388.83,126,,Troy
+126,North Texas,15-13,1387.21,127,,North Texas
+127,Seattle University,17-12,1385.2,128,,Seattle
+128,Maryland,11-18,1382.6,129,,Maryland
+129,San Francisco,15-15,1382.48,130,,San Francisco
+130,George Washington,15-13,1380.7,131,,George Washington
+131,Duquesne,14-13,1379.75,132,,Duquesne
+132,Harvard,15-11,1379.64,133,,Harvard
+133,FAU,15-13,1376.66,134,,Florida Atlantic
+134,Notre Dame,13-16,1375.92,135,,Notre Dame
+135,Oregon State,16-15,1375.88,136,,Oregon State
+136,Central Arkansas,18-11,1375.17,137,,Central Arkansas
+137,Coastal Carolina,18-12,1373.75,138,,Coastal Carolina
+138,Penn,14-11,1372.94,139,,Pennsylvania
+139,South Alabama,19-10,1372.53,140,,South Alabama
+140,Texas State,17-12,1371.96,141,,Texas State
+141,Samford,16-13,1371.42,142,,Samford
+142,Cal State Northridge,16-12,1370.24,143,,Cal State Northridge
+143,Pittsburgh,11-18,1367.07,144,,Pittsburgh
+144,Marquette,10-19,1363.9,145,,Marquette
+145,Penn State,12-17,1363.59,146,,Penn State
+146,Tennessee State,18-9,1363.15,147,,Tennessee State
+147,James Madison,16-14,1363.14,148,,James Madison
+148,Monmouth,15-14,1359.85,149,,Monmouth
+149,East Tennessee State,19-10,1359.58,150,,East Tennessee State
+150,Cornell,12-12,1358.16,151,,Cornell
+151,Wyoming,15-13,1355.8,152,,Wyoming
+152,Fordham,13-13,1352.53,153,,Fordham
+153,Kansas State,11-18,1352.53,154,,Kansas State
+154,Austin Peay,19-8,1351.94,155,,Austin Peay
+155,Northern Colorado,17-11,1349.59,156,9.0,Northern Colorado
+156,Towson,14-14,1349.17,157,-1.0,Towson
+157,South Carolina,12-17,1345.62,158,-1.0,South Carolina
+158,Drexel,15-14,1337.98,159,-1.0,Drexel
+159,Marshall,18-12,1337.31,160,-1.0,Marshall
+160,Southeast Missouri,16-12,1335.54,161,-1.0,Southeast Missouri State
+161,Toledo,14-13,1334.51,162,-1.0,Toledo
+162,Georgetown,13-16,1333.34,163,-1.0,Georgetown
+163,UMBC,18-8,1330.56,164,-1.0,Maryland-Baltimore County
+164,Siena,20-11,1329.24,165,-1.0,Siena
+165,Utah Tech,15-13,1328.56,166,,Utah Tech
+166,Memphis,12-17,1328.47,167,,Memphis
+167,Appalachian State,17-12,1327.65,168,,Appalachian State
+168,UTRGV,16-13,1327.02,169,9.0,Texas-Rio Grande Valley
+169,Middle Tennessee,12-14,1326.21,170,-1.0,Middle Tennessee
+170,Fairfield,18-12,1324.75,171,-1.0,Fairfield
+171,UC Santa Barbara,16-12,1322.33,172,-1.0,UC Santa Barbara
+172,Saint Peter's,16-11,1321.66,173,-1.0,Saint Peter's
+173,Vermont,17-11,1320.94,174,-1.0,Vermont
+174,Detroit,13-14,1319.21,175,-1.0,Detroit Mercy
+175,Utah,10-19,1318.51,176,-1.0,Utah
+176,Bethune-Cookman,16-13,1318.46,177,-1.0,Bethune-Cookman
+177,Morehead State,16-12,1314.94,178,-1.0,Morehead State
+178,Mercer,16-12,1312.12,179,,Mercer
+179,Lipscomb,17-12,1311.54,180,,Lipscomb
+180,Queens,17-13,1310.83,181,,Queens (NC)
+181,Rhode Island,15-14,1309.58,182,,Rhode Island
+182,William & Mary,16-11,1309.11,183,,William & Mary
+183,Charlotte,14-14,1307.7,184,,Charlotte
+184,Saint Bonaventure,14-14,1306.76,185,,St. Bonaventure
+185,UC Davis,15-12,1306.75,186,,UC Davis
+186,Furman,16-12,1305.48,187,,Furman
+187,Louisiana Tech,13-13,1303.62,188,,Louisiana Tech
+188,Long Island,21-10,1303.47,189,,Long Island University
+189,Green Bay,15-14,1302.34,190,,Green Bay
+190,Mount Saint Mary's,14-16,1301.22,191,,Mount St. Mary's
+191,Portland State,16-10,1301.16,192,18.0,Portland State
+192,Oakland,15-15,1299.42,193,-1.0,Oakland
+193,Cal Poly,11-17,1299.03,194,-1.0,Cal Poly
+194,Marist,17-11,1298.15,195,-1.0,Marist
+195,Quinnipiac,18-12,1296.46,196,-1.0,Quinnipiac
+196,Wofford,17-12,1294.74,197,,Wofford
+197,Ohio,13-14,1289.2,198,,Ohio
+198,Southern Miss,14-15,1287.62,199,,Southern Mississippi
+199,Stony Brook,15-13,1287.37,200,,Stony Brook
+200,Purdue Fort Wayne,14-14,1287.18,201,,Purdue Fort Wayne
+201,Pacific,15-14,1286.47,202,,Pacific
+202,Iona,18-13,1286.07,203,,Iona
+203,Western Carolina,12-15,1285.35,204,,Western Carolina
+204,Jacksonville State,11-15,1284.04,205,,Jacksonville State
+205,Boston College,10-19,1283.72,206,,Boston College
+206,Cal State Fullerton,13-15,1283.56,207,,Cal State Fullerton
+207,Montana State,15-13,1283.24,208,6.0,Montana State
+208,East Carolina,10-18,1280.51,209,-1.0,East Carolina
+209,Loyola-Marymount,14-16,1278.05,210,-1.0,Loyola-Marymount
+210,Howard,16-10,1277.81,211,7.0,Howard
+211,Northern Kentucky,15-13,1274.68,212,-1.0,Northern Kentucky
+212,Georgia Tech,11-18,1273.82,213,-1.0,Georgia Tech
+213,Richmond,14-14,1269.06,214,1.0,Richmond
+214,Texas A&M-Corpus Christi,13-14,1268.2,215,9.0,Texas A&M-Corpus Christi
+215,Washington State,11-19,1267.39,216,1.0,Washington State
+216,Temple,14-14,1266.75,217,2.0,Temple
+217,FIU,11-15,1266.68,218,2.0,Florida International
+218,Bowling Green,14-13,1263.93,219,2.0,Bowling Green State
+219,Eastern Washington,12-18,1263.74,220,-24.0,Eastern Washington
+220,SIUE,16-12,1259.14,221,1.0,SIU Edwardsville
+221,Central Connecticut,16-11,1257.7,222,1.0,Central Connecticut State
+222,Montana,13-14,1250.57,223,-10.0,Montana
+223,Rice,10-17,1247.89,224,2.0,Rice
+224,Fresno State,11-17,1246.57,225,2.0,Fresno State
+225,Omaha,11-16,1243.68,226,2.0,Omaha
+226,Tennessee-Martin,18-10,1242.88,227,2.0,Tennessee-Martin
+227,Campbell,11-17,1242.54,228,2.0,Campbell
+228,UTA,13-13,1241.2,229,2.0,UT Arlington
+229,Radford,13-15,1239.78,230,2.0,Radford
+230,Youngstown State,12-16,1239.43,231,2.0,Youngstown State
+231,Drake,10-19,1239.27,232,2.0,Drake
+232,Columbia,14-11,1238.9,233,2.0,Columbia
+233,UNCG,11-18,1235.88,234,2.0,UNC Greensboro
+234,New Mexico State,10-15,1234.08,235,2.0,New Mexico State
+235,Georgia Southern,14-15,1232.76,236,2.0,Georgia Southern
+236,Idaho,14-14,1230.61,237,25.0,Idaho
+237,North Dakota,13-16,1230.5,238,1.0,North Dakota
+238,Portland,11-18,1229.65,239,1.0,Portland
+239,Weber State,14-15,1229.58,240,-15.0,Weber State
+240,New Orleans,14-17,1228.9,241,-25.0,New Orleans
+241,UNC Asheville,11-16,1228.77,242,-1.0,UNC Asheville
+242,South Dakota,13-15,1226.53,243,-1.0,South Dakota
+243,Loyola-Chicago,7-22,1226.04,244,-1.0,Loyola (IL)
+244,Lehigh,13-16,1224.13,245,,Lehigh
+245,Denver,12-16,1220.54,246,,Denver
+246,Chattanooga,10-18,1218.73,247,,Chattanooga
+247,Boston University,14-16,1217.79,248,,Boston University
+248,Colgate,15-14,1216.04,249,,Colgate
+249,Hampton,11-17,1215.52,250,,Hampton
+250,Milwaukee,11-19,1215.13,251,,Milwaukee
+251,Sacred Heart,12-18,1214.46,252,,Sacred Heart
+252,Longwood,13-15,1213.58,253,,Longwood
+253,Old Dominion,10-20,1209.88,254,,Old Dominion
+254,UMass,14-15,1207.24,255,,Massachusetts
+255,Buffalo,14-13,1206.23,256,,Buffalo
+256,Indiana State,9-20,1205.8,257,,Indiana State
+257,Abilene Christian,10-16,1203.76,258,1.0,Abilene Christian
+258,UTEP,7-19,1199.62,259,1.0,UTEP
+259,Princeton,8-19,1199.21,260,1.0,Princeton
+260,Nicholls,12-18,1198.65,261,-3.0,Nicholls State
+261,La Salle,7-21,1197.91,262,1.0,La Salle
+262,Elon,12-16,1196.19,263,1.0,Elon
+263,San Jose State,7-21,1195.0,264,1.0,San Jose State
+264,Louisiana,10-21,1194.7,265,1.0,Louisiana
+265,Norfolk State,11-15,1193.78,266,-22.0,Norfolk State
+266,Texas Southern,10-16,1193.44,267,,Texas Southern
+267,Dartmouth,9-15,1188.48,268,,Dartmouth
+268,Tarleton State,10-16,1188.07,269,,Tarleton State
+269,South Dakota State,11-17,1187.86,270,,South Dakota State
+270,FGCU,12-17,1185.95,271,,Florida Gulf Coast
+271,Charleston Southern,12-16,1177.92,272,,Charleston Southern
+272,American,14-15,1176.5,273,,American
+273,Florida A&M,11-15,1176.32,274,,Florida A&M
+274,Missouri State,10-16,1173.87,275,,Missouri State
+275,Cleveland State,8-21,1171.87,276,13.0,Cleveland State
+276,Delaware,9-19,1171.35,277,-1.0,Delaware
+277,Central Michigan,8-19,1171.26,278,-1.0,Central Michigan
+278,Morgan State,10-15,1170.93,279,20.0,Morgan State
+279,Pepperdine,7-22,1170.56,280,-2.0,Pepperdine
+280,UC Riverside,8-21,1169.59,281,-2.0,UC Riverside
+281,Alabama A&M,13-13,1165.79,282,-2.0,Alabama A&M
+282,NJIT,14-15,1165.13,283,-2.0,NJIT
+283,Brown,7-17,1163.74,284,-2.0,Brown
+284,Lindenwood,14-14,1163.2,285,-2.0,Lindenwood
+285,Southern Utah,7-19,1159.81,286,-2.0,Southern Utah
+286,Southern,10-16,1158.35,287,-2.0,Southern
+287,Presbyterian College,11-17,1157.77,288,-2.0,Presbyterian
+288,Western Michigan,9-18,1157.22,289,-2.0,Western Michigan
+289,Evansville,5-24,1156.6,290,-2.0,Evansville
+290,North Carolina A&T,9-17,1153.58,291,-1.0,North Carolina A&T
+291,West Georgia,12-16,1151.05,292,-1.0,West Georgia
+292,UMass-Lowell,10-17,1149.64,293,-1.0,Massachusetts-Lowell
+293,Ball State,8-19,1147.86,294,-1.0,Ball State
+294,Eastern Kentucky,9-20,1146.43,295,-1.0,Eastern Kentucky
+295,Bellarmine,10-18,1145.97,296,-1.0,Bellarmine
+296,Mercyhurst,13-16,1143.26,297,,Mercyhurst
+297,San Diego,9-20,1143.14,298,,San Diego
+298,Houston Christian,10-19,1140.61,299,12.0,Houston Christian
+299,Jacksonville,10-19,1139.41,300,,Jacksonville
+300,Lafayette,10-20,1134.24,301,,Lafayette
+301,Wagner,10-16,1133.82,302,,Wagner
+302,Manhattan,11-19,1133.17,303,,Manhattan
+303,Tennessee Tech,10-18,1131.67,304,,Tennessee Tech
+304,Northwestern State,8-21,1129.78,305,-9.0,Northwestern State
+305,Little Rock,10-19,1128.16,306,-1.0,Little Rock
+306,Eastern Michigan,9-19,1127.47,307,-1.0,Eastern Michigan
+307,Georgia State,8-21,1127.18,308,-1.0,Georgia State
+308,Alabama State,9-19,1126.93,309,-1.0,Alabama State
+309,South Carolina Upstate,10-18,1118.93,310,-1.0,South Carolina Upstate
+310,Loyola-Maryland,10-19,1117.45,311,-1.0,Loyola (MD)
+311,Le Moyne,14-16,1116.43,312,,Le Moyne
+312,Albany,8-19,1106.6,313,2.0,Albany (NY)
+313,North Carolina Central,8-16,1106.5,314,13.0,North Carolina Central
+314,Jackson State,9-20,1105.01,315,1.0,Jackson State
+315,Incarnate Word,9-19,1104.13,316,-2.0,Incarnate Word
+316,Prairie View A&M,9-17,1100.55,317,,Prairie View
+317,Stetson,9-20,1100.28,318,,Stetson
+318,Long Beach State,7-21,1099.42,319,,Long Beach State
+319,The Citadel,7-21,1097.77,320,1.0,The Citadel
+320,New Haven,11-17,1096.22,321,1.0,New Haven
+321,North Alabama,7-20,1096.13,322,1.0,North Alabama
+322,Arkansas-Pine Bluff,10-17,1095.56,323,1.0,Arkansas-Pine Bluff
+323,Southeastern Louisiana,8-22,1090.73,324,15.0,Southeastern Louisiana
+324,Eastern Illinois,9-19,1090.56,325,,Eastern Illinois
+325,Bryant,7-20,1087.2,326,,Bryant
+326,Idaho State,9-19,1085.75,327,-14.0,Idaho State
+327,Northern Illinois,7-19,1080.64,328,,Northern Illinois
+328,Maine,7-22,1075.84,329,1.0,Maine
+329,Sacramento State,7-20,1075.3,330,13.0,Sacramento State
+330,Lamar,10-19,1074.78,331,-11.0,Lamar
+331,Northern Arizona,7-21,1065.91,332,-3.0,Northern Arizona
+332,Alcorn State,7-21,1065.12,333,-2.0,Alcorn State
+333,Northeastern,6-22,1064.92,334,-2.0,Northeastern
+334,Oral Roberts,6-22,1064.66,335,-2.0,Oral Roberts
+335,Canisius,9-21,1061.74,336,-1.0,Canisius
+336,UTSA,3-24,1061.28,337,-1.0,UTSA
+337,Bucknell,9-22,1058.08,338,-1.0,Bucknell
+338,Niagara,7-22,1055.59,339,-1.0,Niagara
+339,Grambling State,10-17,1051.37,340,,Grambling
+340,East Texas A&M,9-21,1050.0,341,-7.0,East Texas A&M
+341,South Carolina State,6-21,1047.27,342,6.0,South Carolina State
+342,Stonehill,9-20,1046.59,343,-2.0,Stonehill
+343,Fairleigh Dickinson,8-20,1046.0,344,-2.0,FDU
+344,Army,9-20,1038.99,345,,Army
+345,Cal State Bakersfield,6-22,1034.41,346,,Cal State Bakersfield
+346,North Florida,5-24,1031.69,347,,North Florida
+347,Coppin State,6-23,1031.04,348,-4.0,Coppin State
+348,Chicago State,6-24,1018.09,349,1.0,Chicago State
+349,Rider,3-25,1014.65,350,1.0,Rider
+350,Binghamton,5-23,1010.69,351,1.0,Binghamton
+351,Holy Cross,8-21,1010.61,352,1.0,Holy Cross
+352,IU Indianapolis,5-25,1003.57,353,-4.0,IU Indianapolis
+353,Air Force,3-26,995.97,354,1.0,Air Force
+354,Maryland Eastern Shore,7-21,990.27,355,-1.0,Maryland Eastern Shore
+355,Southern Indiana,5-23,986.15,356,,Southern Indiana
+356,New Hampshire,6-20,981.78,357,,New Hampshire
+357,Saint Francis (PA),5-24,967.07,358,,Saint Francis (PA)
+358,VMI,3-25,944.63,359,,VMI
+359,ULM,2-27,926.73,360,1.0,Louisiana-Monroe
+360,Gardner-Webb,1-27,924.61,361,1.0,Gardner-Webb
+361,Delaware State,3-21,911.89,362,-2.0,Delaware State
+362,Mississippi Valley State,2-27,898.11,363,,Mississippi Valley State
+363,UMKC,1-26,896.38,364,,Kansas City
+364,Western Illinois,2-26,893.17,365,,Western Illinois

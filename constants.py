@@ -1,6 +1,7 @@
 TEAMS_DATA = 'data\\teams_data.pkl'
 STAT_EFFECTS = 'data\\stat_effects.pkl'
 ELO_STAT_EFFECTS = 'data\\team_stat_effects.pkl'
+GMM = 'data\\gmm.pkl'
 
 POSSESSIONS_MEAN = 72.04849315068492
 POSSESSIONS_STD_DEV = 3.22918695871525
