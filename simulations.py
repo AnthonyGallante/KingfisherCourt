@@ -2,12 +2,32 @@ from entities import *
 from gpt_analysis import *
 from constants import *
 
+from entities import *
+from constants import *
+from simulations import *
+from tournament_roster import *
+from constants import TEAMS_DATA, STAT_EFFECTS
+
+import shutil
+import pickle
+import openpyxl as xl
+
+from pathlib import Path
+
 import pickle
 import numpy as np
 import pandas as pd
 from collections import Counter
 from tqdm import tqdm, trange
 from IPython.display import clear_output
+
+PRECOMPUTED_GAMES = Path.cwd() / 'data' / 'pre_computed_games.pkl'
+SCALED_STATS = ['2PA', '3PA', 'FTA', 'STL', 'BLK', 'TOV', 'PF', 'ORB', 'DRB']
+UNSCALED_STATS = ['2P%', '3P%', 'FT%']
+MODELED_STATS = ['BLK', 'STL', 'TOV', 'ORB', 'DRB', 'PF']
+TEMPERATURE = 0.20
+UPSET_PREVENTION = 0.9
+NUM_BRACKETS = 5
 
 with open(TEAMS_DATA, 'rb') as f:
     teams = pickle.load(f)
@@ -18,9 +38,9 @@ with open(STAT_EFFECTS, 'rb') as f:
 with open(ELO_STAT_EFFECTS, 'rb') as f:
     elo_effect = pickle.load(f)
 
-SCALED_STATS = ['2PA', '3PA', 'FTA', 'STL', 'BLK', 'TOV', 'PF', 'ORB', 'DRB']
-UNSCALED_STATS = ['2P%', '3P%', 'FT%']
-MODELED_STATS = ['BLK', 'STL', 'TOV', 'ORB', 'DRB', 'PF']
+with open(PRECOMPUTED_GAMES, 'rb') as f:
+    games = pickle.load(f)
+
 
 def get_starters(team: Team):
     starters = list(team.df['GS'].sort_values(ascending=False).iloc[:5].index)
@@ -246,3 +266,96 @@ def simulate_n_games(team_1, team_2, n: int, summary=True):
              'Record': record,
              'Analysis': analysis
             }
+
+def round_of_games(team_list: list, n: int=20, summary=False):
+    winners, losers = [], []
+    schools = []
+    records = []
+    analyses = []
+
+    for i in range(0, len(team_list), 2):
+        game = simulate_n_games(team_list[i], team_list[i+1], n, summary=summary)
+        winners.append(teams[game['Winner']].name)
+        losers.append(teams[game['Loser']].name)
+        analyses.append(game['Analysis'])
+        schools.append([game['Team 1'], game['Team 2']])
+        records.append([game['Win Count 1'], game['Win Count 2']])
+    
+    return {'Winners': winners, 
+            'Losers': losers, 
+            'Analysis': analyses, 
+            'Schools': schools,
+            'Records': records
+        }
+
+
+def first_round(region: dict, n: int=20):
+    first_round_teams = [teams[v] for v in region.values()]
+    return round_of_games(first_round_teams, n=n)
+
+def check_temperature(temperature, upset_prevention, team_1_win_pct, team_2_win_pct):
+    if max(team_1_win_pct, team_2_win_pct) > upset_prevention:
+        return False # Chalk
+    else:
+        rng = np.random.uniform()
+        if rng < temperature:
+            return True # UPSET
+        else:
+            return False # Chalk
+
+def precomputed_games(team_1, team_2):
+    for game in games:
+        game_players = [game['Winner'], game['Loser']]
+        if (team_1 in game_players) and (team_2 in game_players):
+            
+            # Align win pcts to the passed-in team order
+            if team_1 == game['Team 1'].name:
+                t1_pct = game['Team 1 Win Pct']
+                t2_pct = game['Team 2 Win Pct']
+            else:
+                t1_pct = game['Team 2 Win Pct']
+                t2_pct = game['Team 1 Win Pct']
+
+            upset = check_temperature(TEMPERATURE, UPSET_PREVENTION, game['Team 1 Win Pct'], game['Team 2 Win Pct'])
+            
+            if not upset:
+                return {
+                    'T1': team_1,
+                    'T1%': t1_pct,
+                    'T2': team_2,
+                    'T2%': t2_pct,
+                    'W': game['Winner'],
+                    'Analysis': game['Record']
+                }
+            else:
+                return {
+                    'T1': team_1,
+                    'T1%': t2_pct,  # flipped for upset formatting
+                    'T2': team_2,
+                    'T2%': t1_pct,
+                    'W': game['Loser'],
+                    'Analysis': f'UPSET! Normal winner is {game["Winner"]}'
+                }
+    raise ValueError(f"No precomputed game found for {team_1} vs {team_2}")
+                
+
+def precomputed_games_from_list(l):
+    for i in range(0, len(l), 2):
+        yield precomputed_games(l[i], l[i+1])
+
+def parse_games(outcomes):
+    round_t1 = [t['T1'] for t in outcomes]
+    round_t2 = [t['T2'] for t in outcomes]
+    round_t1_pct = [t['T1%'] for t in outcomes]
+    round_t2_pct = [t['T2%'] for t in outcomes]
+    round_analysis = [t['Analysis'] for t in outcomes]
+    round_winner = [t['W'] for t in outcomes]
+    return round_t1, round_t2, round_t1_pct, round_t2_pct, round_analysis, round_winner
+
+
+def precomputed_region(roster_list):
+    first_round  = parse_games(list(precomputed_games_from_list(roster_list)))
+    second_round = parse_games(list(precomputed_games_from_list(first_round[5])))
+    third_round  = parse_games(list(precomputed_games_from_list(second_round[5])))
+    fourth_round = parse_games(list(precomputed_games_from_list(third_round[5])))
+    return first_round, second_round, third_round, fourth_round

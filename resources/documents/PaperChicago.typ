@@ -25,12 +25,6 @@
 
 This project focuses on using Network Science and Causal Inference concepts included in the MSDS-452-DL curriculum for the purpose of creating a set of diversified, competetive March Madness brackets. The first goal of this effort is creating a model that measures the causal effect of in-game events in terms of their influence on the outcome on the game. Such a model can be used as the basis for Monte Carlo simulation to determine how often one team is likely to defeat another. In recognition that some online competitions allow the user to submit dozens of brackets, the second goal is developing a strategy for building the March Madness bracket itself. 
 
-#linebreak()
-
-*Note*: #text(fill: red)[
-  Changes made in support of Checkpoint C are shown in RED.
-]
-
 #pagebreak()
 
 = Introduction
@@ -72,9 +66,7 @@ A causal model is used to understand how each event captured in game-level box s
 
 Because our simulation is based on possession-level statistics, key variables in our causal model are those that influence team possessions and scoring opportunities. These include rebounds (ORB and DRB), blocks (BLK), steals (STL) and turnovers (TOV). Additionally, because none of these actually contribute directly to a team's score, their effects must be mediated through direct scoring attempts (2PA, 3PA, FTA). 
 
-#text(fill: red)[
 Using python's DoWhy library @sharma2020dowhy, we acknowledge the validity of @causal_model_dag due to its resilience to refutation in the standard toolkit. While it is likely that this is not the absolute truth, our DAG is unlikely to contain placebos, additional random common causes between each variable and the respective team's score, and atypical data subsets. This method was also used for the DAG shown in @elo_dag.
-]
 
 #figure(
   image("../visualizations/graphviz_graph.png", width: 60%),
@@ -99,20 +91,17 @@ A benefit of the causal inference framework used in this project is the ease of 
 While this annotation process has no influence on the outcome of a round of simulations, it at least provides a fun attempt at explaining why one team might have defeated another, which might be useful in upset-situations. While @uconn_kansas shows the outcome of 500 games, fewer simulated games would likely be desired in high-entropy brackets, where chance plays a higher role. Thus, one way to increase the randomness in a bracket is to reduce the number of simulalted games played between each team.
 
 == Strength of Schedule
-#text(fill: red)[
+
 In order to broadly address changes in scoring behavior due to differences in teams' skill levels, we employ a version of the Elo rating system, borrowed from chess @nolan_2026_elo. With just a single rating number in which teams are awarded relatively few points for an easy win and more points awarded for a difficult decisive win, others have seen approximately a 66% success rate in previous March Madness competitions @hanley2024elo. 
 
 The graph below (@elo_dag) shows the causal assumptions made during a game of basketball played with a team of a different skill level. One can measure the changes in game-level statistics as a function of elo differences. In preliminary analysis, we see that teams challenging an opponent with a rating of 100 points higher are slightly more likely to encounter additional turnovers, blocks, steals, etc., resulting in approximately 2.5 points fewer than playing teams of equal rating.
-]
 
 #figure(
   image("../visualizations/graphviz_team_graph.png", width:80%),
   caption:[A directed acyclic graph showing the relationship between elo ratings and game outcomes.]
 )<elo_dag>
 
-#text(fill: red)[
-  Even as this project begins to draw to its close, we might recognize that additional causal models can be made to identify how different offensive and defensive variables influence a team's elo rating. A hypothesis can be formed to investigate whether offense-heavy teams perform at a higher level than their elo rating would suggest when playing against defense-poor teams, or vice versa. Offensive and defensive level performance may be latent variables that can be measured through the use of directed acyclic graphs. This data is likely available in the datasets used in this project and are a logical next step for our prediction model.
-]
+Even as this project begins to draw to its close, we might recognize that additional causal models can be made to identify how different offensive and defensive variables influence a team's elo rating. A hypothesis can be formed to investigate whether offense-heavy teams perform at a higher level than their elo rating would suggest when playing against defense-poor teams, or vice versa. Offensive and defensive level performance may be latent variables that can be measured through the use of directed acyclic graphs. This data is likely available in the datasets used in this project and are a logical next step for our prediction model.
 
 == Bracket Optimization
 
@@ -162,13 +151,11 @@ Data from the sources in the table above will be used to populate causal models 
 
 == Amendment of objectives
 
-#text(fill: red)[
 Previous versions of this document included hopeful efforts to maximize bracket strategies. However, given the constraints of the current academic term and the project's extensive scope, the primary focus has been narrowed to the predictive modeling component. In order to preserve the original objectives of this projcet, a bracket-generating spreadsheet can be developed with the currently existing code base to allow users to tune brackets based on the pre-calculated round-robin graph database. This way, multiple brackets can be made, and close games (configurable) can be flipped at random. This simple technique will allow users to generate a new random bracket, without the fear of seeing all 16 seeds make it to the Final Four.
 
 This has been done by encoding each bracket a 63 bit binary string and appending it to file. A 63 bit binary string can easily be encoded as an integer on the range of 0 to $2^63 - 1$ for easier readability. By checking if this number already exists, we can ensure that no duplicate bracket files are made.
 
 Now that a workflow is complete, previous tournament data can be incorperated and used to assess the prediction accuracy. This will be the final effort of the project.
-]
 
 #show figure: set block(breakable: true)
 #figure(
@@ -216,6 +203,8 @@ See @spreadsheet_visualization for an example output, using randomly selected te
 )<spreadsheet_visualization>
 
 I am hopeful that the objectives defined above are attainable with the data available. While I will be entering the brackets created by this project into the official March Madness competition (details yet to be released), my only requirement for success is that this approach is better than random.
+
+= Challenges and Future Work
 
 #pagebreak()
 #bibliography("references.bib", style: "chicago-notes")
