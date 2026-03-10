@@ -330,7 +330,7 @@ def precomputed_games(team_1, team_2):
             else:
                 return {
                     'T1': team_1,
-                    'T1%': t2_pct,  # flipped for upset formatting
+                    'T1%': t2_pct,
                     'T2': team_2,
                     'T2%': t1_pct,
                     'W': game['Loser'],
