@@ -36,5 +36,5 @@ Run Exploratory Analysis: Check out Discovery.ipynb to view current trends.
 
 Simulate the Tournament: Execute simulations.py or step through bracket_builder.ipynb to generate your predicted brackets.
 
-📝 License
+### 📝 License
 This project is open-source and available under the MIT License.
