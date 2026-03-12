@@ -56,6 +56,10 @@ Uses causal inference frameworks to refute the idea of the "Hot Hand." Does not 
 A network can be formed by modeling the players as nodes and the number of passes between each player as directed, weighted edges. 
 Both Xu et al. and Bu et al. suggest that teams who pass the ball across the entire team have an advantage over teams that do not. The exception is in the Men's National Basketball Association (NBA), which rely on star players to serve as a distribution node, making a majority of the passes. The data sources currently being used (later discussed in @data_sources) do not have data to this resolution, making this resource difficult to use at the current moment. The dataset used by Bu et al. does not appear to available for all NCAA Division Ⅰ basketball teams, as SportsVu optical sensors are not installed in all facilities, despite being standard in theNBA. I am hopeful that player-to-player passing data is available at the college level.
 
+= Building Your Own Bracket
+
+To use this software for bracket creation, one must set the tournament roster found in the "teams" sheet in the blank_bracket.xlsx file. If a new tournament roster is set, the user must run the round robin simulation code by executing the db_builder.ipynb notebook. Connecting to the memgraph database is not necessary. After the db_builder.ipynb code executes, all combinations of 64 teams (2,016 games in total) will have been simulated and stored in a .pkl file that can be used in the bracket_builder.ipynb. 
+
 = Methods 
 
 This project is divided into two distinct lines of effort: game level prediction with causal inference and bracket optimization with various network science techniques. 
@@ -147,6 +151,22 @@ See @data_sources for a description of data sources used thus far. This table wi
 
 Data from the sources in the table above will be used to populate causal models and a memgraph database. It may be reasonable to pre-compute a large number of games between all possible combinations of teams and store those in a graph database prior to the bracket generation stage. Computing these outcomes beforehand will allow the bracket-building program to simply query results, rather than performing simulation calculations at runtime. 
 
+= Measure of effectiveness
+
+What should have been a simple model validation process became complicated by the nature of the data sources used in this project.
+
+=== Sports Reference Data
+
+Sports Reference, the primary source of game and player statistics in this project, maintains clear and strict webscraping guidelines for those intending to programmatically collect their data @sr_bot_traffic. The use of bots and web scrapers is not strictly prohibited, but limited to 10 requests per minute. In order to responsibly use this data source, the code used in this project will make only 5 requests at a time @sr_data_use. A single request is sufficient to obtain a season's worth of games at both the player and game level for a single team. For the 365 schools that have participated in the 2025-26 Division I basketball season on Sports Reference, data could simply be scraped manually by executing code periodically. A more sophisticated schedule-based web scraping program could be created to slowly collect data from previous years, however, additional request limits may be in place. Even when attempting to stay within guidelines by making a single request per minute, the author's session was "jailed" on more than one occasion. Taking the hint, and attempting to stay respectful of the site's guidelines, only the necessary 2025-26 season data was collected.
+
+=== Elo Ratings
+
+While gathering elo rating data from warrennolan.com presented no technical hurdles, a particular interpretation of elo ratings must be adopted for use of this project. Game-by-game elo scores are not readily available from this source; only one rating is available per team, per season. Elo ratings change after each game, and finding the historical record of what the elo ratings were at the beginning of each game is a non-trivial endeavor. To complicate matters further, elo ratings continue to change during the NCAA Division I Basketball tournament. Every time a team wins or loses in the tournament, their elo rating increases or decreases accordingly. The winner of each tournament will have necessarily won 6 consecutive games, while every other team in the tournament will have lost one game. This results in the winner of each tournament gaining the most elo points throughout the tournament—in the last 5 tournaments, this elo increase has propelled the winner to also become the highest rated team in the league, regardless of whether this was the case prior to the tournament. For the purpose of this project, one must interpret a team's elo rating as a static estimate of a latent skill level.
+
+=== Solution and Future Work
+
+The solution to the issues above can be solved by simply comparing the output of simulated games to games that truly happened this season. Using this method, we achieve approximately 77.5% success. However, the primary objective of this project is to produce March Madness brackets. The ultimate test of effectiveness will be comparing the brackets created with this program with those in the public ESPN Men's NCAA Tournament Challenge @espn_mens_bracket.
+
 = Conclusions
 
 == Amendment of objectives
@@ -154,8 +174,6 @@ Data from the sources in the table above will be used to populate causal models 
 Previous versions of this document included hopeful efforts to maximize bracket strategies. However, given the constraints of the current academic term and the project's extensive scope, the primary focus has been narrowed to the predictive modeling component. In order to preserve the original objectives of this projcet, a bracket-generating spreadsheet can be developed with the currently existing code base to allow users to tune brackets based on the pre-calculated round-robin graph database. This way, multiple brackets can be made, and close games (configurable) can be flipped at random. This simple technique will allow users to generate a new random bracket, without the fear of seeing all 16 seeds make it to the Final Four.
 
 This has been done by encoding each bracket a 63 bit binary string and appending it to file. A 63 bit binary string can easily be encoded as an integer on the range of 0 to $2^63 - 1$ for easier readability. By checking if this number already exists, we can ensure that no duplicate bracket files are made.
-
-Now that a workflow is complete, previous tournament data can be incorperated and used to assess the prediction accuracy. This will be the final effort of the project.
 
 #show figure: set block(breakable: true)
 #figure(
@@ -203,8 +221,6 @@ See @spreadsheet_visualization for an example output, using randomly selected te
 )<spreadsheet_visualization>
 
 I am hopeful that the objectives defined above are attainable with the data available. While I will be entering the brackets created by this project into the official March Madness competition (details yet to be released), my only requirement for success is that this approach is better than random.
-
-= Challenges and Future Work
 
 #pagebreak()
 #bibliography("references.bib", style: "chicago-notes")

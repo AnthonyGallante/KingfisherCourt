@@ -298,7 +298,7 @@ def check_temperature(temperature, upset_prevention, team_1_win_pct, team_2_win_
         else:
             return False # Chalk
 
-def precomputed_games(team_1, team_2):
+def precomputed_games(team_1, team_2, temperature=TEMPERATURE, upset_prevention=UPSET_PREVENTION):
     for game in games:
         game_players = [game['Winner'], game['Loser']]
         if (team_1 in game_players) and (team_2 in game_players):
@@ -311,7 +311,7 @@ def precomputed_games(team_1, team_2):
                 t1_pct = game['Team 2 Win Pct']
                 t2_pct = game['Team 1 Win Pct']
 
-            upset = check_temperature(TEMPERATURE, UPSET_PREVENTION, game['Team 1 Win Pct'], game['Team 2 Win Pct'])
+            upset = check_temperature(temperature, upset_prevention, game['Team 1 Win Pct'], game['Team 2 Win Pct'])
             
             if not upset:
                 return {
@@ -334,9 +334,9 @@ def precomputed_games(team_1, team_2):
     raise ValueError(f"No precomputed game found for {team_1} vs {team_2}")
                 
 
-def precomputed_games_from_list(l):
+def precomputed_games_from_list(l, temperature=TEMPERATURE, upset_prevention=UPSET_PREVENTION):
     for i in range(0, len(l), 2):
-        yield precomputed_games(l[i], l[i+1])
+        yield precomputed_games(l[i], l[i+1], temperature=temperature, upset_prevention=upset_prevention)
 
 def parse_games(outcomes):
     round_t1 = [t['T1'] for t in outcomes]
@@ -348,9 +348,9 @@ def parse_games(outcomes):
     return round_t1, round_t2, round_t1_pct, round_t2_pct, round_analysis, round_winner
 
 
-def precomputed_region(roster_list):
-    first_round  = parse_games(list(precomputed_games_from_list(roster_list)))
-    second_round = parse_games(list(precomputed_games_from_list(first_round[5])))
-    third_round  = parse_games(list(precomputed_games_from_list(second_round[5])))
-    fourth_round = parse_games(list(precomputed_games_from_list(third_round[5])))
+def precomputed_region(roster_list, temperature=TEMPERATURE, upset_prevention=UPSET_PREVENTION):
+    first_round  = parse_games(list(precomputed_games_from_list(roster_list, temperature=temperature, upset_prevention=upset_prevention)))
+    second_round = parse_games(list(precomputed_games_from_list(first_round[5], temperature=temperature, upset_prevention=upset_prevention)))
+    third_round  = parse_games(list(precomputed_games_from_list(second_round[5], temperature=temperature, upset_prevention=upset_prevention)))
+    fourth_round = parse_games(list(precomputed_games_from_list(third_round[5], temperature=temperature, upset_prevention=upset_prevention)))
     return first_round, second_round, third_round, fourth_round
