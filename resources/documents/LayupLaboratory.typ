@@ -1,4 +1,5 @@
 #set page(paper: "us-letter", margin: (x: 1in, y: 1in))
+#set page(numbering: "1")
 #set text(font: "Times New Roman", size: 12pt)
 #set heading(numbering: none)
 #set cite(style: "chicago-author-date")
@@ -18,8 +19,8 @@
 
 #linebreak()
 
-#set par(first-line-indent: 0.5in)
 #set par(leading: 2em, spacing: 2em)
+#set par(first-line-indent: (amount: 2em, all: true))
 
 = Abstract
 
@@ -137,17 +138,19 @@ See @data_sources for a description of data sources used thus far. This table wi
 
 #show table.cell.where(y: 0): set text(weight: "bold")
 
-#figure(
-  table(
-    columns: 2,
-    stroke: 0.75pt,
-    table.header[Source][Description],
-    [sports-reference.com @sports_reference_cbb ], [Team and Individual Player level data], 
-    [warrennolan.com @nolan_2026_elo], [Team ELO ratings],
-    [hoopr.sportsdataverse.org @gilani_2021_hoopR],[Play-by-play data, schedules, and box scores]
-  ),
-  caption: [Data Sources],
-) <data_sources>
+#pad(x: -5%)[
+  #figure(
+    table(
+      columns: (50%, 50%),
+      stroke: 0.75pt,
+      table.header[Source][Description],
+      [sports-reference.com @sports_reference_cbb ], [Team and Individual Player level data], 
+      [warrennolan.com @nolan_2026_elo], [Team ELO ratings],
+      [hoopr.sportsdataverse.org @gilani_2021_hoopR],[Play-by-play data, schedules, and box scores]
+    ),
+    caption: [Data Sources],
+  ) <data_sources>
+]
 
 Data from the sources in the table above will be used to populate causal models and a memgraph database. It may be reasonable to pre-compute a large number of games between all possible combinations of teams and store those in a graph database prior to the bracket generation stage. Computing these outcomes beforehand will allow the bracket-building program to simply query results, rather than performing simulation calculations at runtime. 
 
