@@ -168,7 +168,7 @@ While gathering elo rating data from warrennolan.com presented no technical hurd
 
 === Solution and Future Work
 
-The solution to the issues above can be solved by simply comparing the output of simulated games to games that truly happened this season. Using this method, we achieve approximately 77.5% success. However, the primary objective of this project is to produce March Madness brackets. The ultimate test of effectiveness will be comparing the brackets created with this program with those in the public ESPN Men's NCAA Tournament Challenge @espn_mens_bracket.
+The solution to the issues above can be solved by simply comparing the output of simulated games to games that have already occurred By comparing the outright winner of our simulated games to the actual historical game results from the 2025-26 season, this method achieves an approximate 77.5% prediction success rate. However, the primary objective of this project is to produce March Madness brackets. The ultimate test of effectiveness will be comparing the brackets created with this program with those in the public ESPN Men's NCAA Tournament Challenge @espn_mens_bracket. Future iterations of this project could leverage network science algorithms—such as eigenvector centrality or community detection—on the player-team graph to extract latent performance metrics and directly influence game-level predictions.
 
 = Conclusions
 
@@ -219,11 +219,11 @@ Results from this project can be visualized in a spreadsheet.
 See @spreadsheet_visualization for an example output, using randomly selected teams.
 
 #figure(
-  image("../Bracket_example_image.png", width:110%),
+  image("../visualizations/Sample Bracket Output.png", width:110%),
   caption:[An example output visualization spreadsheet.]
 )<spreadsheet_visualization>
 
-I am hopeful that the objectives defined above are attainable with the data available. While I will be entering the brackets created by this project into the official March Madness competition (details yet to be released), my only requirement for success is that this approach is better than random.
+I am hopeful that the objectives defined above are attainable with the data available. While I will be entering the brackets created by this project into the official March Madness competition (details yet to be released), my only requirement for success is that this approach is better than random. ESPN tournament results will be posted in the accompanying repository as the tournament unfolds.
 
 #pagebreak()
 #bibliography("references.bib", style: "chicago-notes")
