@@ -1,0 +1,85 @@
+
+digraph PerfectlySymmetricalMacroModel {
+    // Styling for readability and perfect symmetry
+    graph [rankdir=LR, splines=curved, compound=true, nodesep=0.7, ranksep=1.2];
+    node [shape=box, style="filled,rounded", fillcolor="#f0f0f0", fontname="Helvetica"];
+
+    // ==========================================
+    // CROSSOVER INTERACTIONS (Defense & Transitions)
+    // ==========================================
+    // These crossing edges show exactly how the two mirrored systems interact.
+    
+    // Steals cause opponent turnovers
+
+    // Blocks disrupt opponent attempts
+    BLK -> oAtt;
+    oBLK -> Att;
+
+    // Fouls grant opponent scoring attempts (Free Throws)
+    PF -> oAtt;
+    oPF -> Att;
+
+    // Defensive rebounds deny opponent second-chance attempts
+    DRB -> oAtt;
+    oDRB -> Att;
+
+    // Turnovers create transition attempts for the opponent
+    TOV -> oAtt;
+    oTOV -> Att;
+
+    // ==========================================
+    // TEAM SCORING PATHWAY
+    // ==========================================
+    subgraph cluster_Team_Scoring {
+        label = "Team Scoring Pathway";
+        style = "dashed";
+        color = "#5bc0de"; // Light blue border
+        
+        // Team Box Score Stats
+        STL [label="Team STL"];
+        BLK [label="Team BLK"];
+        PF  [label="Team PF"];
+        ORB [label="Team ORB"];
+        DRB [label="Team DRB"];
+        TOV [label="Team TOV"];
+        
+        // Core Scoring Mediators
+        Att [label="Team Scoring Attempts", fillcolor="#e1f5fe"];
+        Tm  [label="Team Score", fillcolor="#d4edda"]; // Green for Team Score
+        
+        // Internal Team Logic
+        ORB -> Att; // Offensive boards create second chances
+        DRB -> Att; // Defensive boards create team transition attempts
+        TOV -> Att; // Turnovers reduce own attempts
+        
+        Att -> Tm;  // Attempts are the sole mediator for the final score
+    }
+
+    // ==========================================
+    // OPPONENT SCORING PATHWAY
+    // ==========================================
+    subgraph cluster_Opponent_Scoring {
+        label = "Opponent Scoring Pathway";
+        style = "dashed";
+        color = "#d9534f"; // Red border
+        
+        // Opponent Box Score Stats
+        oSTL [label="Opp STL"];
+        oBLK [label="Opp BLK"];
+        oPF  [label="Opp PF"];
+        oORB [label="Opp ORB"];
+        oDRB [label="Opp DRB"];
+        oTOV [label="Opp TOV"];
+        
+        // Core Scoring Mediators
+        oAtt [label="Opp Scoring Attempts", fillcolor="#fde0dc"];
+        Opp_Score [label="Opponent Score", fillcolor="#f8d7da"]; // Red for Opp Score
+        
+        // Internal Opponent Logic
+        oORB -> oAtt; // Offensive boards create second chances
+        oDRB -> oAtt; // Defensive boards create opponent transition attempts
+        oTOV -> oAtt; // Turnovers reduce own attempts
+        
+        oAtt -> Opp_Score; // Attempts are the sole mediator for the final score
+    }
+}
