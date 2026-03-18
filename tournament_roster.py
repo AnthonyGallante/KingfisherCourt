@@ -30,7 +30,7 @@ east = {
     15: sheet['C17'].value,
 }
 
-west = {
+south = {
     1 : sheet['C18'].value,
     16: sheet['C19'].value,
     8 : sheet['C20'].value,
@@ -49,7 +49,7 @@ west = {
     15: sheet['C33'].value,
 }
 
-south = {
+west = {
     1 : sheet['C34'].value,
     16: sheet['C35'].value,
     8 : sheet['C36'].value,
